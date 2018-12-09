@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0BC0C7E0-2F99-44F7-B06D-B602CB87D097}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>__NuGetPublish</RootNamespace>
+    <AssemblyName>__NuGetPublish</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sds.Download.nuspec" />
+    <None Include="Sds.FileStorage.EntityFramework.nuspec" />
+    <None Include="Sds.FileStorage.Core.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sds.Storage.Blob.Core.nuspec" />
+    <None Include="Sds.Storage.Blob.InMemory.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sds.Storage.Blob.GridFS.nuspec" />
+    <None Include="Sds.Storage.KeyValue.Core.nuspec" />
+    <None Include="Sds.Storage.KeyValue.Redis.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>del /F $(TargetDir)*.nupkg
+$(SolutionDir).nuget\nuget pack $(ProjectDir)SDS.Download.nuspec -OutputDirectory $(TargetDir)
+$(SolutionDir).nuget\nuget pack $(ProjectDir)SDS.FileStorage.Core.nuspec -OutputDirectory $(TargetDir)
+$(SolutionDir).nuget\nuget pack $(ProjectDir)SDS.FileStorage.EntityFramework.nuspec -OutputDirectory $(TargetDir)
+$(SolutionDir).nuget\nuget pack $(ProjectDir)Sds.Storage.KeyValue.Core.nuspec -OutputDirectory $(TargetDir)
+$(SolutionDir).nuget\nuget pack $(ProjectDir)Sds.Storage.KeyValue.Redis.nuspec -OutputDirectory $(TargetDir)
+$(SolutionDir).nuget\nuget pack $(ProjectDir)Sds.Storage.Blob.Core.nuspec -OutputDirectory $(TargetDir)
+$(SolutionDir).nuget\nuget pack $(ProjectDir)Sds.Storage.Blob.GridFS.nuspec -OutputDirectory $(TargetDir)
+$(SolutionDir).nuget\nuget push $(TargetDir)*.nupkg -s http://nuget.your-company.com/ F793C782-E721-4224-B748-AA5AD52ECEB4 -Verbosity detailed</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

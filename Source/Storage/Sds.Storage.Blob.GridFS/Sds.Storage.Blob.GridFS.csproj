@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Sds.Storage.Blob.GridFS</AssemblyName>
+    <PackageId>Sds.Storage.Blob.GridFS</PackageId>
+    <AssemblyVersion>0.0.2.0</AssemblyVersion>
+    <FileVersion>0.0.2.0</FileVersion>
+    <PostBuildEvent></PostBuildEvent>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>2.0.0</Version>
+    
+  </PropertyGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="IF NOT EXIST $(SolutionDir)bin mkdir $(SolutionDir)bin&#xD;&#xA;copy /Y $(TargetPath) $(SolutionDir)bin" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver.GridFS" Version="2.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.Storage.Blob.Core\Sds.Storage.Blob.Core.csproj" />
+  </ItemGroup>
+
+</Project>

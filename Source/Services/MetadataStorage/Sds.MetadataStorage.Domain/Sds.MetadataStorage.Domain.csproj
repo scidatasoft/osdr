@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Sds.MetadataStorage.Domain</AssemblyName>
+    <RootNamespace>Sds.MetadataStorage.Domain</RootNamespace>
+    <PackageId>Sds.MetadataStorage.Domain</PackageId>
+    <PackageVersion>0.13.1</PackageVersion>
+    <Authors>Science Data Software</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <Copyright>Copyright 2018 (c) Science Data Software. All rights reserved.</Copyright>
+    <PackageTags>domain, metadata</PackageTags>
+    <Description>SDS metadata generation domain models</Description>
+    <Company>Science Data Software</Company>
+    <Product>Open Science Data Repository</Product>
+  </PropertyGroup>
+
+</Project>

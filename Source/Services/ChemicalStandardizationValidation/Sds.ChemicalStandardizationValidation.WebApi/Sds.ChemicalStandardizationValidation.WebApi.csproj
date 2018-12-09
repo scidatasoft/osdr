@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Company>Science Data Software</Company>
+    <Product>Open Science Data Repository</Product>
+    <Copyright>Copyright © 2017 Science Data Software</Copyright>
+   
+  </PropertyGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="1.2.0" />
+    <PackageReference Include="MassTransit.SerilogIntegration" Version="5.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.5.0" />
+    <PackageReference Include="Sds.Storage.Blob.GridFS" Version="0.2.3" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="2.0.2" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="2.4.1-dev-00063" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.ChemicalStandardizationValidation.Domain\Sds.ChemicalStandardizationValidation.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

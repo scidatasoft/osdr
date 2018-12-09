@@ -1,0 +1,3 @@
+..\Indexing\Sds.Indexing\Indexing\Sds.Indexing.sln;..\Indexing\Sds.Indexing.Tests\Sds.Indexing.Tests.csproj
+..\OsdrService\OsdrService.sln;..\OsdrService\Sds.Osdr.Domain.BddTests\Sds.Osdr.Domain.BddTests.csproj
+..\OsdrService\OsdrService.sln;..\OsdrService\Sds.Osdr.WebApi.Tests\Sds.Osdr.WebApi.Tests.csproj

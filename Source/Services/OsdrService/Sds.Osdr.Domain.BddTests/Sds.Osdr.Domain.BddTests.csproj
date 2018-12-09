@@ -1,0 +1,255 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Sds.Osdr.BddTests</RootNamespace>
+    <Configurations>Debug;Release;Dev</Configurations>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Tests\Entity\User\**" />
+    <EmbeddedResource Remove="Tests\Entity\User\**" />
+    <None Remove="Tests\Entity\User\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Infrastructure\InMemoryEventStore.cs" />
+    <Compile Remove="Infrastructure\InMemoryStateRepository.cs" />
+    <Compile Remove="Infrastructure\InProcessBus.cs" />
+    <Compile Remove="Tests\Crystals\InvalidCifProcessing.cs" />
+    <Compile Remove="Tests\Crystals\InvalidCifProcessingImageGeneration.cs" />
+    <Compile Remove="Tests\Crystals\ValidCifProcessing.cs" />
+    <Compile Remove="Tests\Entity\DeleteEntityTests.cs" />
+    <Compile Remove="Tests\Folders\CreateNewFolder.cs" />
+    <Compile Remove="Tests\GenegicFiles\ArchiveGzProcessing.cs" />
+    <Compile Remove="Tests\GenegicFiles\ImageJpgProcessing.cs" />
+    <Compile Remove="Tests\MachineLearning\PredictPropertiesInvalidCase.cs" />
+    <Compile Remove="Tests\MachineLearning\PredictPropertiesValidCase.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndFailBeforeTraining.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndFailDuringTheReportGeneration.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndFailDuringTheTraining.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndSharing.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneValidModel.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneValidModelReverseEvents.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneValidModelWithDelays.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneValidModelWithFailedOptimization.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneValidModelWithSuccessOptimization.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainTwoValidModels.cs" />
+    <Compile Remove="Tests\MachineLearning\UploadOneModel.cs" />
+    <Compile Remove="Tests\OfficeFiles\MsWordProcessing.cs" />
+    <Compile Remove="Tests\Pdf\PdfProcessing.cs" />
+    <Compile Remove="Tests\Reactions\InvalidRxnProcessing.cs" />
+    <Compile Remove="Tests\Reactions\ValidRxnProcessing.cs" />
+    <Compile Remove="Tests\Spectra\InvalidJdxProcessing.cs" />
+    <Compile Remove="Tests\Spectra\ValidJdxProcessing.cs" />
+    <Compile Remove="Tests\Streams\ReadEventsBackwardAsyncFromMolFile.cs" />
+    <Compile Remove="Tests\Substances\InvalidMolProcessing.cs" />
+    <Compile Remove="Tests\Substances\InvalidSdfProcessing.cs" />
+    <Compile Remove="Tests\Substances\SdfProcessingWithOneValidAndOneInvalidRecords.cs" />
+    <Compile Remove="Tests\Substances\ValidCdxProcessing.cs" />
+    <Compile Remove="Tests\Substances\ValidMolProcessing.cs" />
+    <Compile Remove="Tests\Substances\ValidSdfProcessing.cs" />
+    <Compile Remove="Tests\Tabular\CsvProcessing.cs" />
+    <Compile Remove="Tests\Users\CreateNewUser.cs" />
+    <Compile Remove="Tests\WebPages\When_upload_webpage_from_chemspider.cs" />
+    <Compile Remove="Tests\WebPages\When_upload_webpage_from_generic_url.cs" />
+    <Compile Remove="Tests\WebPages\When_upload_webpage_from_wiki.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Infrastructure\InMemoryEventStore.cs" />
+    <None Include="Infrastructure\InMemoryStateRepository.cs" />
+    <None Include="Infrastructure\InProcessBus.cs" />
+    <None Include="Tests\Crystals\InvalidCifProcessing.cs" />
+    <None Include="Tests\Crystals\InvalidCifProcessingImageGeneration.cs" />
+    <None Include="Tests\Crystals\ValidCifProcessing.cs" />
+    <None Include="Tests\Entity\DeleteEntityTests.cs" />
+    <None Include="Tests\Folders\CreateNewFolder.cs" />
+    <None Include="Tests\GenegicFiles\ArchiveGzProcessing.cs" />
+    <None Include="Tests\GenegicFiles\ImageJpgProcessing.cs" />
+    <None Include="Tests\MachineLearning\PredictPropertiesInvalidCase.cs" />
+    <None Include="Tests\MachineLearning\PredictPropertiesValidCase.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndFailBeforeTraining.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndFailDuringTheReportGeneration.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndFailDuringTheTraining.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndSharing.cs" />
+    <None Include="Tests\MachineLearning\TrainOneValidModel.cs" />
+    <None Include="Tests\MachineLearning\TrainOneValidModelReverseEvents.cs" />
+    <None Include="Tests\MachineLearning\TrainOneValidModelWithDelays.cs" />
+    <None Include="Tests\MachineLearning\TrainOneValidModelWithFailedOptimization.cs" />
+    <None Include="Tests\MachineLearning\TrainOneValidModelWithSuccessOptimization.cs" />
+    <None Include="Tests\MachineLearning\TrainTwoValidModels.cs" />
+    <None Include="Tests\MachineLearning\UploadOneModel.cs" />
+    <None Include="Tests\OfficeFiles\MsWordProcessing.cs" />
+    <None Include="Tests\Pdf\PdfProcessing.cs" />
+    <None Include="Tests\Reactions\InvalidRxnProcessing.cs" />
+    <None Include="Tests\Reactions\ValidRxnProcessing.cs" />
+    <None Include="Tests\Spectra\InvalidJdxProcessing.cs" />
+    <None Include="Tests\Spectra\ValidJdxProcessing.cs" />
+    <None Include="Tests\Streams\ReadEventsBackwardAsyncFromMolFile.cs" />
+    <None Include="Tests\Substances\InvalidMolProcessing.cs" />
+    <None Include="Tests\Substances\InvalidSdfProcessing.cs" />
+    <None Include="Tests\Substances\SdfProcessingWithOneValidAndOneInvalidRecords.cs" />
+    <None Include="Tests\Substances\ValidCdxProcessing.cs" />
+    <None Include="Tests\Substances\ValidMolProcessing.cs" />
+    <None Include="Tests\Substances\ValidSdfProcessing.cs" />
+    <None Include="Tests\Tabular\CsvProcessing.cs" />
+    <None Include="Tests\Users\CreateNewUser.cs" />
+    <None Include="Tests\WebPages\When_upload_webpage_from_chemspider.cs" />
+    <None Include="Tests\WebPages\When_upload_webpage_from_generic_url.cs" />
+    <None Include="Tests\WebPages\When_upload_webpage_from_wiki.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="4.19.4" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.1" />
+    <PackageReference Include="Sds.EventStore.InMemory" Version="0.8.0" />
+    <PackageReference Include="Sds.MassTransit" Version="3.0.3" />
+    <PackageReference Include="Sds.MetadataStorage.Domain" Version="0.13.1" />
+    <PackageReference Include="Sds.Storage.Blob.InMemory" Version="1.0.12" />
+    <PackageReference Include="Sds.Storage.KeyValue.Core" Version="1.0.8" />
+    <PackageReference Include="Sds.Storage.KeyValue.InMemory" Version="1.0.1" />
+    <PackageReference Include="Serilog.Sinks.XUnit" Version="1.0.5" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.Osdr.Domain.BackEnd\Sds.Osdr.Domain.BackEnd.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Domain.FrontEnd\Sds.Osdr.Domain.FrontEnd.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Domain.SagaHost\Sds.Osdr.Domain.SagaHost.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Persistence\Sds.Osdr.Persistence.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.bddtests.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\10001.rxn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100118.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100119.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100133.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100172.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100231.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100252.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100331.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\InvalidImageGeneration.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100110.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100110_modified.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\125_11Mos.cdx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\13Csample.jdx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\2-Methyl-1-Propanol.jdx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\2018-02-14.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\78a3cf2d-b5d5-4e38-a685-2cf2f3952b9e.mol.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Abdelaziz A Full_manuscript.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Aspirin.mol">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Aspirin.mol.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Bernoulli_Naive_Bayes_with_isotonic_class_weights.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Chemical-diagram.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\chemspider.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\chemspider.mol">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\chemspider2.mol">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\combined lysomotrophic.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\computer-humor-computer-science.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Developing Standard Approaches for Curating Small Molecule Pharmaceuticals_Jan18_2013.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\drugbank_10_records.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\empty.rxn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\epam.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\FocusSynthesis_InStock.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Generic.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\GenericInvalid.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\IMG_0109.gz">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\ml-training-image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\ML_report.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\PropertiesPrediction.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\ringcount_0.mol">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\invalid_sdf_with_20_records_where_first_and_second_are_invalid.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\test_solubility.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\wiki.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\wikiAspirin.mol">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\WikiAspirin.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

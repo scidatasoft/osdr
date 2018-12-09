@@ -1,0 +1,59 @@
+{
+  "sections": [
+    {
+      "screens": [
+        {
+          "title": "CHEMINF Properties",
+          "screenParts": [
+            {
+              "title": "Contributor",
+              "responseType": "text-response",
+              "dataType": "string",
+              "responseKey": "contributor",
+              "responseTarget": "Properties.ChemInf[@Name='contributor'].Value", // Json-path expression? (https://github.com/json-path/JsonPath)
+              "lookup": {
+                "type": "ontology",
+                "source": "CHEMINF"
+              }
+            },
+            {
+              "title": "Publisher",
+              "responseType": "text-response",
+              "dataType": "string",
+              "responseKey": "publisher",
+              "responseTarget": "Properties.ChemInf[@Name='publisher'].Value", // Json-path expression? (https://github.com/json-path/JsonPath)
+              "lookup": {
+                "type": "taxonomy",
+                "source": "CHEMINF"
+              }
+            },
+            {
+              "title": "State",
+              "responseType": "text-response",
+              "dataType": "string",
+              "responseKey": "state",
+              "responseTarget": "Properties.ChemInf[@Name='state'].Value", // Json-path expression? (https://github.com/json-path/JsonPath)
+              "lookup": {
+                "type": "table",
+                "source": "states",
+                "data-field": "code",
+                "display-field": "title"
+              }
+            },
+            {
+              "title": "Country",
+              "responseType": "text-response",
+              "dataType": "string",
+              "responseKey": "country",
+              "responseTarget": "Properties.ChemInf[@Name='country'].Value", // Json-path expression? (https://github.com/json-path/JsonPath)
+              "lookup": {
+                "type": "list",
+                "source": "countries"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

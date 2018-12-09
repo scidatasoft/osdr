@@ -1,0 +1,51 @@
+version: '3.4'
+
+services:
+    eventstore:
+        image: eventstore/eventstore:release-4.0.2
+        ports:
+          - "2113:2113"
+          - "1113:1113"
+        environment:
+          - RUN_PROJECTIONS = All
+        #volumes:
+        # - data-eventstore:/var/lib/eventstore
+        networks:
+          - osdr-test
+
+    redis:
+        image: redis:4-alpine
+        command: redis-server --appendonly yes
+        ports:
+          - "6379:6379"
+        #volumes:
+        # - data-redis:/data
+        networks:
+          - osdr-test
+
+    rabbitmq:
+        image: docker.your-company.com/osdr-rabbitmq:3.6
+        hostname: "rabbitmq-test"
+        environment:
+          - RABBITMQ_DEFAULT_VHOST=osdr_test
+        ports:
+          - "8282:15672"
+          - "5671:5671"
+          - "5672:5672"
+        #volumes:
+        # - data-rabbitmq:/var/lib/rabbitmq
+        networks:
+          - osdr-test
+
+    mongo:
+        image: mongo:3.6
+        ports:
+          - "27017:27017"
+        #volumes:
+        #  - data-mongo-config:/data/configdb
+        #  - data-mongo-data:/data/db
+        networks:
+          - osdr-test
+
+networks:
+    osdr-test:

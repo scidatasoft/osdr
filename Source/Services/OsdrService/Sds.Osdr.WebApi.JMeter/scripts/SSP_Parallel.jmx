@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </Arguments>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="filename">setup.csv</stringProp>
+        <stringProp name="fileEncoding">UTF-8</stringProp>
+        <stringProp name="variableNames">oder_url_server,osdr_url_token,osdr_iterations</stringProp>
+        <boolProp name="ignoreFirstLine">false</boolProp>
+        <stringProp name="delimiter">,</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+      </CSVDataSet>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+        <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list"/>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SSP" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.delayedStart">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="responseModelsSSP" elementType="Argument">
+              <stringProp name="Argument.name">responseModelsSSP</stringProp>
+              <stringProp name="Argument.value">&quot;123&quot;</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="postQuerySSP" elementType="Argument">
+              <stringProp name="Argument.name">postQuerySSP</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="modelsSize" elementType="Argument">
+              <stringProp name="Argument.name">modelsSize</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="modelsIndex" elementType="Argument">
+              <stringProp name="Argument.name">modelsIndex</stringProp>
+              <stringProp name="Argument.value">-1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="currentIdForSSP" elementType="Argument">
+              <stringProp name="Argument.name">currentIdForSSP</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="predictionId" elementType="Argument">
+              <stringProp name="Argument.name">predictionId</stringProp>
+              <stringProp name="Argument.value">null</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="currentPropertyName" elementType="Argument">
+              <stringProp name="Argument.name">currentPropertyName</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="log_index" elementType="Argument">
+              <stringProp name="Argument.name">log_index</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="log_modelId" elementType="Argument">
+              <stringProp name="Argument.name">log_modelId</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="log_property" elementType="Argument">
+              <stringProp name="Argument.name">log_property</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="log_prediction_id" elementType="Argument">
+              <stringProp name="Argument.name">log_prediction_id</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="log_result" elementType="Argument">
+              <stringProp name="Argument.name">log_result</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="log_elapseTime" elementType="Argument">
+              <stringProp name="Argument.name">log_elapseTime</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="log_modelName" elementType="Argument">
+              <stringProp name="Argument.name">log_modelName</stringProp>
+              <stringProp name="Argument.value"></stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">users.csv</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">username,password</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get token" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">grant_type=password&amp;username=${username}&amp;password=${password}&amp;scope=api+osdr-api</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${osdr_url_token}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Basic b3Nkcl9jbGk6b3Nkcl9jbGk=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">access_token</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.access_token</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value"> Bearer ${access_token}</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get models" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${oder_url_server}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">osdr/v1/api/entities/models/public?$filter=targets%20eq%20%27SSP%27&amp;PageNumber=1&amp;PageSize=10</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json-patch+json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">models</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import org.apache.commons.lang.StringUtils;
+
+models = vars.get(&quot;models&quot;);
+String jsonString = prev.getResponseDataAsString();
+JSONParser parser = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
+JSONArray jsonModels = (JSONArray) parser.parse(data);
+
+Boolean isContainModel1 = false;
+Boolean isContainModel2 = false;
+Boolean isContainModel3 = false;
+
+for (int i = 0; i &lt; jsonModels.size(); i++) {
+	JSONObject json = jsonModels.get(i);
+	String modelId = (String)json.get(&quot;id&quot;);
+	log.info(&quot;::::::::&quot; + modelId);
+
+	if (modelId.equals(&quot;000b0000-ac12-0242-f4b6-08d5c7d7c156&quot;)) {
+		log.info(&quot;exist&quot;);
+		isContainModel1 = true;
+	}
+	if (modelId.equals(&quot;001b0000-ac12-0242-c3ce-08d5d06771ae&quot;)) {
+		log.info(&quot;exist&quot;);
+		isContainModel2 = true;
+	}
+	if (modelId.equals(&quot;001b0000-ac12-0242-c735-08d5d06e3220&quot;)) {
+		log.info(&quot;exist&quot;);
+		isContainModel3 = true;
+	}
+}
+
+if (isContainModel1.equals(true) &amp;&amp; isContainModel2.equals(true) &amp;&amp; isContainModel3.equals(true)) {
+	log.info(&quot;done&quot;);
+} else {
+	log.info(&quot;failed&quot;);
+	Failure = true;
+     FailureMessage = &quot;venue_name value was: &quot; + value;
+}
+//log.info(&quot;:: &quot; + json.size());
+//JsonObject json = JsonObject.readFrom(models);
+//for (int i=0 ; i&lt;10 ; i++) {
+//	if (models[i].contains(&quot;New York&quot;)) {
+//	}
+//}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellAssertion guiclass="BeanShellAssertionGui" testclass="BeanShellAssertion" testname="BeanShell Assertion" enabled="false">
+            <stringProp name="BeanShellAssertion.query">import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import org.apache.commons.lang.StringUtils;
+
+log.info(&quot;------------------- begin beanshell --------------------&quot;);
+
+void info(String text) {
+	log.info(&quot;::&gt; &quot; + text);
+}
+
+models = vars.get(&quot;responseModelsSSP&quot;);
+
+
+//long startTime = vars.get(&quot;START_TIME&quot;);
+//long current = System.currentTimeMillis();
+
+String modeIdFromSSP = &quot;00090000-ac12-0242-ee0c-08d5d7adc3d8&quot;;
+String jsonString = prev.getResponseDataAsString();
+JSONParser parser = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
+JSONArray jsonModels = (JSONArray) parser.parse(models);
+
+Boolean isContainModel = false;
+
+for (int i = 0; i &lt; jsonModels.size(); i++) {
+	JSONObject json = jsonModels.get(i);
+	String modelId = (String)json.get(&quot;id&quot;);
+	info(modelId);
+
+	if (modelId.equals(modeIdFromSSP)) {
+		info(&quot;is exist: true&quot;);
+		isContainModel = true;
+	} else info(&quot;is exist: false&quot;);
+}
+
+if (isContainModel.equals(true)) {
+	info(&quot;done&quot;);
+} else {
+	info(&quot;failed&quot;);
+	Failure = true;
+     FailureMessage = &quot;venue_name value was: &quot; + value;
+}
+
+log.info(&quot;-------------------- end beanshell ---------------------&quot;);
+</stringProp>
+            <stringProp name="BeanShellAssertion.filename"></stringProp>
+            <stringProp name="BeanShellAssertion.parameters"></stringProp>
+            <boolProp name="BeanShellAssertion.resetInterpreter">false</boolProp>
+          </BeanShellAssertion>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell post Get models size" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import org.apache.commons.lang.StringUtils;
+
+log.info(&quot;------------------- begin beanshell --------------------&quot;);
+
+models = vars.get(&quot;models&quot;);
+
+JSONParser parser = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
+JSONArray jsonModels = (JSONArray) parser.parse(data);
+String modelsSize = vars.get(&quot;modelsSize&quot;);
+modelsSize = (jsonModels.size() - 1).toString();
+
+vars.put(&quot;modelsSize&quot;, modelsSize);
+vars.put(&quot;runMls&quot;, System.currentTimeMillis().toString());
+
+log.info(&quot;models size: &quot; + vars.get(&quot;modelsSize&quot;));
+//log.info(modelsSize+&quot;&quot;);
+
+JSONObject info = new JSONObject();
+info.put(&quot;modeslSize&quot;, modelsSize);
+//info.put(&quot;userName&quot;, vars.get(&quot;username&quot;));
+info.put(&quot;stages&quot;, new JSONArray());
+
+vars.put(&quot;info&quot;, info.toString());</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import org.apache.commons.lang.StringUtils;
+
+//vars.put(&quot;modelsIndex&quot;, &quot;-1&quot;);
+//vars.put(&quot;modelsSize&quot;, 0);
+index = -1;
+vars.put(&quot;modelsIndex&quot;, index.toString());
+//vars.put(&quot;pdfFileNode_Status&quot;, &quot;&quot;);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+        </hashTree>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller" enabled="true">
+          <stringProp name="WhileController.condition">${__javaScript(!&quot;${modelsSize}&quot;.equals(&quot;${modelsIndex}&quot;))}</stringProp>
+        </WhileController>
+        <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">https://api.dev.dataledger.io/osdr/v1/api/version</stringProp>
+            <stringProp name="script">import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors; // necessary imports
+
+      
+List&lt;String&gt; urls = new ArrayList&lt;String&gt;(); // initialize array of URLs
+Collections.addAll(urls,args); // read URLs from &quot;Parameters&quot; input and add them to array
+ExecutorService pool = Executors.newFixedThreadPool(urls.size()); // initialize pool of Future Tasks with number of threads equal to size of URLs provided
+for (String url : urls) { // for each URL from list
+   final String currentURL = url;
+   pool.submit(new Runnable() { // Sumbit a new thread which will execute GET request
+
+       @Override
+       public void run() {
+           try {
+               HttpClient client = new DefaultHttpClient(); // Use Apache Commons HTTPClient to perform GET request
+  HttpGet get = new HttpGet(currentURL);
+     HttpResponse response = client.execute(get);
+HttpEntity entity = response.getEntity();
+EntityUtils.consume(entity);
+           } catch (Exception ex) {
+               ex.printStackTrace();
+           }
+
+       }
+   });
+}
+pool.shutdown(); // shut down thread pool</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="create ssp" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;PropertyName&quot;:&quot;${currentPropertyName}&quot;,&#xd;
+	&quot;Structure&quot;:&quot;C[C@H](CCCC(C)C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC=C4[C@@]3(CC[C@@H](C4)O)C)C&quot;,&#xd;
+	&quot;Format&quot;:&quot;SMILES&quot;,&#xd;
+	&quot;ModelIds&quot;:[&#xd;
+		&quot;${currentIdForSSP}&quot;&#xd;
+	]&#xd;
+}&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${oder_url_server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">osdr/v1/api/MachineLearning/predictions/structure</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json-patch+json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">predictionId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.predictionId</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import org.apache.commons.lang.StringUtils;
+
+log.info(&quot;-----------------------------------------&quot;);
+var index = Integer.parseInt(vars.get(&quot;modelsIndex&quot;));
+index++;
+vars.put(&quot;modelsIndex&quot;, index.toString());
+vars.put(&quot;predictionId&quot;, &quot;&quot;);
+vars.put(&quot;pdfFileNode_Status&quot;, &quot;CALCULATING&quot;);
+models = vars.get(&quot;models&quot;);
+
+JSONParser parser = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
+JSONArray jsonModels = (JSONArray) parser.parse(models);
+String modelsSize = vars.get(&quot;modelsSize&quot;);
+modelsSize = jsonModels.size().toString();
+
+log.info(&quot;index: &quot; + index);
+if (index != -1) {
+	json = jsonModels.get(index);
+	currentModelId = json.get(&quot;id&quot;);
+
+	currentPropertyName = json.get(&quot;property&quot;).get(&quot;name&quot;);
+	vars.put(&quot;currentPropertyName&quot;, currentPropertyName);
+	vars.put(&quot;currentIdForSSP&quot;, currentModelId.toString());
+
+	log.info(&quot;modelId: &quot; + currentModelId);
+	log.info(&quot;property: &quot; + currentPropertyName);
+	
+}</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import org.apache.commons.lang.StringUtils;
+
+predictionId = vars.get(&quot;predictionId&quot;);
+
+log.info(&quot;prediction: &quot; + predictionId);</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor get info" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import org.apache.commons.lang.StringUtils;
+
+models = vars.get(&quot;models&quot;);
+
+JSONParser logParser = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
+JSONArray jsonModels = (JSONArray) logParser.parse(models);
+
+var index = Integer.parseInt(vars.get(&quot;modelsIndex&quot;));
+jsonModel = jsonModels.get(index);
+
+JSONParser parser = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
+JSONObject info = (JSONObject) parser.parse(vars.get(&quot;info&quot;));
+
+JSONObject stage = new JSONObject();
+stage.put(&quot;index&quot;, vars.get(&quot;modelsIndex&quot;));
+stage.put(&quot;modelId&quot;, jsonModel.get(&quot;id&quot;));
+stage.put(&quot;property&quot;, jsonModel.get(&quot;property&quot;).get(&quot;name&quot;));
+stage.put(&quot;predictionId&quot;, vars.get(&quot;predictionId&quot;));
+stage.put(&quot;startTime&quot;, System.currentTimeMillis());
+
+info.get(&quot;stages&quot;).appendElement(stage);
+
+vars.put(&quot;info&quot;, info.toString());
+//log.info(&quot;:: &quot; + info.get(&quot;stages&quot;) + &quot; index: &quot;);
+//String modelsSize = vars.get(&quot;modelsSize&quot;);
+//modelsSize = jsonModels.size().toString();</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+            <stringProp name="IfController.condition">${__javaScript(!&quot;${predictionId}&quot;.equals(&quot;&quot;))}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="while get ssp" enabled="true">
+              <stringProp name="WhileController.condition">${__javaScript(!&quot;${pdfFileNode_Status}&quot;.equals(&quot;COMPLETE&quot;))}</stringProp>
+            </WhileController>
+            <hashTree>
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="[wait] get status" enabled="true">
+                <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                  <collectionProp name="Arguments.arguments">
+                    <elementProp name="" elementType="HTTPArgument">
+                      <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                      <stringProp name="Argument.value"></stringProp>
+                      <stringProp name="Argument.metadata">=</stringProp>
+                    </elementProp>
+                  </collectionProp>
+                </elementProp>
+                <stringProp name="HTTPSampler.domain">${oder_url_server}</stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
+                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                <stringProp name="HTTPSampler.path">osdr/v1/api/machinelearning/predictions/${predictionId}</stringProp>
+                <stringProp name="HTTPSampler.method">GET</stringProp>
+                <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              </HTTPSamplerProxy>
+              <hashTree>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor status" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">pdfFileNode_Status</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.status</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                  <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor get models" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">sspModels</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.response.models</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                  <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="false">
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="script">var start = Integer.parseInt(vars.get(&quot;runMls&quot;).toString());
+var current = System.currentTimeMillis();
+
+var total = current - start;
+log.info(&quot;--------------------&gt;&quot; + total);
+//total = total / 1000;
+//total = total / 60;
+
+//if (total &gt;= 5)
+//{
+//    throw new RuntimeError(&quot;Bad.&quot;);
+//}</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
+              </hashTree>
+              <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If ssp.Status == &quot;COMPLATED&quot;" enabled="true">
+                <stringProp name="IfController.condition">${__javaScript(&quot;${pdfFileNode_Status}&quot;.equals(&quot;COMPLETE&quot;))}</stringProp>
+                <boolProp name="IfController.evaluateAll">false</boolProp>
+                <boolProp name="IfController.useExpression">true</boolProp>
+              </IfController>
+              <hashTree>
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="[wait] get status" enabled="true">
+                  <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+                  <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                    <collectionProp name="Arguments.arguments">
+                      <elementProp name="" elementType="HTTPArgument">
+                        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                        <stringProp name="Argument.value"></stringProp>
+                        <stringProp name="Argument.metadata">=</stringProp>
+                      </elementProp>
+                    </collectionProp>
+                  </elementProp>
+                  <stringProp name="HTTPSampler.domain">${oder_url_server}</stringProp>
+                  <stringProp name="HTTPSampler.port"></stringProp>
+                  <stringProp name="HTTPSampler.protocol">https</stringProp>
+                  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+                  <stringProp name="HTTPSampler.path">osdr/v1/api/machinelearning/predictions/${predictionId}</stringProp>
+                  <stringProp name="HTTPSampler.method">GET</stringProp>
+                  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+                  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+                  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+                  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+                  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+                  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+                  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+                </HTTPSamplerProxy>
+                <hashTree>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor status" enabled="true">
+                    <stringProp name="JSONPostProcessor.referenceNames">pdfFileNode_Status</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.status</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                    <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor get models" enabled="true">
+                    <stringProp name="JSONPostProcessor.referenceNames">sspModels</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.response.models</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                    <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor elapsedTime" enabled="true">
+                    <stringProp name="JSONPostProcessor.referenceNames">predictionElapsedTime</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.response.predictionElapsedTime</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                    <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                  <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor name" enabled="true">
+                    <stringProp name="JSONPostProcessor.referenceNames">modelName</stringProp>
+                    <stringProp name="JSONPostProcessor.jsonPathExprs">$.response.models.name</stringProp>
+                    <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                    <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+                  </JSONPostProcessor>
+                  <hashTree/>
+                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor print to console" enabled="true">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">import net.minidev.json.JSONArray;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
+import org.apache.commons.lang.StringUtils;
+
+elapsedTime = vars.get(&quot;predictionElapsedTime&quot;);
+models = vars.get(&quot;sspModels&quot;);
+
+JSONParser infoParser = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
+JSONObject info = (JSONObject) infoParser.parse(vars.get(&quot;info&quot;));
+
+JSONParser parser = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
+JSONArray jsonModels = (JSONArray) parser.parse(models);
+model = jsonModels.get(0);
+modelName = model.get(&quot;trainingParameters&quot;).get(&quot;name&quot;);
+result = model.get(&quot;result&quot;);
+
+var index = Integer.parseInt(vars.get(&quot;modelsIndex&quot;));
+
+if (result != null) {
+	modelValue = result.get(&quot;value&quot;);
+	modelError = result.get(&quot;error&quot;);
+
+	info.get(&quot;stages&quot;).get(index).put(&quot;result&quot;, (modelValue).toString());
+
+	log.info(&quot;result: &quot; + (modelValue + &quot;/&quot; + modelError));
+} else {
+	error = model.get(&quot;error&quot;).get(&quot;error&quot;);
+
+	info.get(&quot;stages&quot;).get(index).put(&quot;result&quot;, error);
+	log.info(&quot;result: [error] &quot; + error);
+}
+
+log.info(&quot;elapsed time: &quot; + elapsedTime + &quot; milliseconds&quot;);
+log.info(&quot;model name: &quot; + modelName);
+log.info(&quot;user name: &quot; + vars.get(&quot;username&quot;));
+
+info.get(&quot;stages&quot;).get(index).put(&quot;elapsed_time&quot;, elapsedTime);
+info.get(&quot;stages&quot;).get(index).put(&quot;model_name&quot;, modelName);
+info.get(&quot;stages&quot;).get(index).put(&quot;userName&quot;, vars.get(&quot;username&quot;));
+info.get(&quot;stages&quot;).get(index).put(&quot;endTime&quot;, System.currentTimeMillis());
+
+vars.put(&quot;info&quot;, info.toString());
+
+//String modelsSize = vars.get(&quot;modelsSize&quot;);
+//var index = vars.get(&quot;modelsIndex&quot;);
+//var size = vars.get(&quot;modelsSize&quot;);
+
+//log.info(&quot;index: &quot; + index + &quot; | &quot; + size);
+
+//if (size.toString() == index.toString()) {
+//	log.info(&quot;&gt;-----------------------------------------&lt;&quot;);
+//}
+</stringProp>
+                  </BeanShellPostProcessor>
+                  <hashTree/>
+                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor get info for logs" enabled="true">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">log.info(&quot;--------&gt;--------&gt;-------&gt;&quot;);</stringProp>
+                  </BeanShellPostProcessor>
+                  <hashTree/>
+                  <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor write to file" enabled="false">
+                    <boolProp name="resetInterpreter">false</boolProp>
+                    <stringProp name="parameters"></stringProp>
+                    <stringProp name="filename"></stringProp>
+                    <stringProp name="script">//import org.apache.jmeter.services.FileServer;
+
+//f = new FileOutputStream(&quot;results/carSpeed.csv&quot;, true); 
+//p = new PrintStream(f); 
+
+//p.println( &quot;Hello&quot;);
+
+// Close File(s)
+//p.close();f.close();</stringProp>
+                  </BeanShellPostProcessor>
+                  <hashTree/>
+                </hashTree>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+          <stringProp name="BeanShellSampler.query"></stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">results/tree.csv</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">results/table.csv</stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

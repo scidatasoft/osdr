@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;Dev</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.Osdr.Generic\Sds.Osdr.Generic.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Reactions\Sds.Osdr.Reactions.csproj" />
+  </ItemGroup>
+
+</Project>

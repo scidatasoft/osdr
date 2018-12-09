@@ -1,0 +1,21 @@
+{
+  "_source": [
+    "@timestamp",
+    "error",
+    "host",
+    "monitor",
+    "type",
+    "up"
+  ],
+  "query": {
+    "match": {
+      "type": "{QUERY_TYPE}"
+    }
+  },
+  "sort": [
+  {
+    "@timestamp": "desc"
+  }],
+  "size": 1
+}
+

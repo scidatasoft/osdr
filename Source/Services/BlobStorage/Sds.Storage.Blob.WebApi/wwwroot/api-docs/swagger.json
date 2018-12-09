@@ -1,0 +1,223 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "BLOB Storage API",
+    "description":"The BLOB Storage API allows you to upload or download files from the server.<br/>For example, you can upload a MOL file, and then download the processed result. You can:<br/>&nbsp;&nbsp;&nbsp;&bull;&nbsp;Post a new file, with POST api/blobs/{bucket}<br/>&nbsp;&nbsp;&nbsp;&bull;&nbsp;Download an existing file with GET api/blobs/{bucket}/{id}<br/>&nbsp;&nbsp;&nbsp;&bull;&nbsp;Delete a BLOB, with DELETE api/blobs/{bucket}/{id}<br/>You can also get the current version of this api with GET api/version."
+      },
+  "basePath": "/",
+  "paths": {
+    "/api/blobs/{bucket}/{id}": {
+      "get": {
+        "tags": [
+          "BLOBS"
+        ],
+        "summary": "Download a BLOB by BLOB Id",
+        "description": "Request a binary representation of a file on the server. For example, you can download an image if you know its Blob id. Your user id is used as the bucket id.",
+        "operationId": "ApiBlobsByBucketByIdGet",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "bucket",
+            "in": "path",
+            "description": "Bucket Id",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "$ref": "#/definitions/bucketId"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Blob Id",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "schema": {
+              "$ref": "#/definitions/blobId"
+            }
+          },
+          {
+            "name": "content-disposition",
+            "in": "query",
+            "description": "Content disposition: inline or attachment",
+            "required": false,
+            "type": "string",
+            "schema": {
+              "$ref": "#/definitions/contentDisposition"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - Download sent",
+            "schema": {
+              "$ref": "#/definitions/getBlobsResponse"
+            }
+          },
+          "404": {
+            "description": "File not found or request parameters incorrect"
+          },
+          "401": {
+            "description": "Unauthorized - correct token needed"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "BLOBS"
+        ],
+        "summary": "Delete a BLOB",
+        "description": "Using this endpoint, you can delete the blob associated with a file. Note that the file itself is not deleted, just its binary data.",
+        "operationId": "ApiBlobsByBucketByIdDelete",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "bucket",
+            "in": "path",
+            "description": "Bucket Id",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "$ref": "#/definitions/bucketId"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Blob Id",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "schema": {
+              "$ref": "#/definitions/blobId"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Success - file deleted"
+          },
+          "404": {
+            "description": "File not found or request parameters incorrect"
+          },
+          "401": {
+            "description": "Unauthorized - correct token needed"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+
+          }
+        ]
+      }
+    },
+    "/api/blobs/{bucket}": {
+      "post": {
+        "tags": [
+          "BLOBS"
+        ],
+        "summary": "Upload a BLOB",
+        "description": "You can send a file to be stored on the server using this method. The server accepts data of type multipart/form-data. You can optionally add metadata, which can be any information you'd like stored with your file. For example, metadata could be used to set up a machine learning model.<br/>Multiple files can be sent in the same request. To do so, each file's respective metadata must come directly before its file form data. ",
+        "operationId": "ApiBlobsByBucketPost",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "bucket",
+            "in": "path",
+            "description": "Bucket Id",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "$ref": "#/definitions/bucketId"
+            }
+          },
+          {
+            "name": "File",
+            "in": "formData",
+            "description": "Upload file.",
+            "required": true,
+            "type": "file",
+            "schema": {
+              "$ref": "#/definitions/getBlobsResponse"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Upload sent"
+          },
+          "401": {
+            "description": "Unauthorized - correct token needed"
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/api/version": {
+      "get": {
+        "tags": [
+          "Version"
+        ],
+        "summary": "Get the BLOBS API version",
+        "operationId": "ApiVersionGet",
+        "consumes": [],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success - version returned",
+            "schema": {
+              "$ref": "#/definitions/version"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "bucketId": {
+      "type": "string",
+      "example": "8332cb0a-e8ba-4585-b9e4-e64399e8b4bd"
+    },
+    "blobId": {
+      "type": "string",
+      "example": "b5690502-2cbc-46a6-8cb4-9c00d0a73133"
+    },
+    "contentDisposition": {
+      "type": "string",
+      "example": "attachment"
+    },
+    "version": {
+      "type": "string",
+      "example": "1.0"
+    },
+    "getBlobsResponse": {
+      "type": "string",
+      "example": "tetrahedral3D_4.mol"
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "name": "Authorization",
+      "in": "header",
+      "type": "apiKey",
+      "description": "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\""
+    }
+  }
+}

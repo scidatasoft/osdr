@@ -1,0 +1,146 @@
+﻿{
+  "Aspirin": {
+    "inn": "acetylsalicylic acid",
+    "watchedfields": "changed",
+    "verifiedrevid": "464364671",
+    "iupac_name": "2-(acetyloxy)benzoic acid",
+    "image": "Aspirin-skeletal.svg",
+    "image2": "Aspirin-B-3D-balls.png",
+    "width": "100px",
+    "width2": "125px",
+    "pronounce": "acetylsalicylic acid {{IPAc-en|ə|ˌ|s|iː|t|əl|ˌ|s|æ|l|ᵻ|ˈ|s|ɪ|l|ᵻ|k}}",
+    "drugs.com": [
+      "drugs.com",
+      "monograph",
+      "aspirin"
+    ],
+    "medlineplus": "a682878",
+    "licence_us": "Aspirin",
+    "pregnancy_au": "C",
+    "pregnancy_us": "C",
+    "pregnancy_us_comment": "D in the 3rd trimester",
+    "legal_au": "S2",
+    "legal_au_comment": "except when given intravenously (in which case it is schedule 4), used in animal medicine (schedule 5/6) or when the dose is higher than usual.",
+    "legal_uk": "GSL",
+    "legal_us": "OTC",
+    "routes_of_administration": "by mouth, rectal, lysine acetylsalicylate may be given [[intravenous therapy|intravenously]] or [[intramuscular injection|intramuscularly]]",
+    "bioavailability": {
+      "value": "80–100%",
+      "ref_args": {
+        "name": "MSR",
+        "url": "http://reference.medscape.com/drug/zorprin-bayer-buffered-aspirin-343279#showall",
+        "title": ""
+      }
+    },
+    "protein_bound": {
+      "value": "80–90%",
+      "ref_args": {
+        "name": "MD",
+        "url": "http://www.medicinescomplete.com/mc/martindale/current/2601-s.htm",
+        "title": ""
+      }
+    },
+    "metabolism": {
+      "value": "[[Liver]], ([[CYP2C19]] and possibly [[CYP3A]]), some is also hydrolysed to salicylate in the gut wall.",
+      "ref_args": {
+        "name": "MD",
+        "url": "",
+        "title": ""
+      }
+    },
+    "elimination_half-life": {
+      "value": "Dose-dependent; 2 h to 3 h for low doses, 15 h to 30 h for large doses.",
+      "ref_args": {
+        "name": "MD",
+        "url": "",
+        "title": ""
+      }
+    },
+    "excretion": {
+      "value": "Urine (80–100%), sweat, saliva, feces",
+      "ref_args": {
+        "name": "MSR",
+        "url": "",
+        "title": ""
+      }
+    },
+    "iuphar_ligand": "4139",
+    "cas_number_ref": {
+      "cascite": "",
+      "correct": "",
+      "??": ""
+    },
+    "cas_number": "50-78-2",
+    "atc_prefix": "A01",
+    "atc_suffix": "AD05",
+    "atc_supplemental": [
+      "ATC",
+      "B01",
+      "AC06"
+    ],
+    "pubchem": "2244",
+    "drugbank_ref": {
+      "drugbankcite": "",
+      "correct": "",
+      "drugbank": ""
+    },
+    "drugbank": "DB00945",
+    "chemspiderid_ref": {
+      "chemspidercite": "",
+      "correct": "",
+      "chemspider": ""
+    },
+    "chemspiderid": "2157",
+    "unii_ref": {
+      "fdacite": "",
+      "correct": "",
+      "FDA": ""
+    },
+    "unii": "R16CO5Y76E",
+    "kegg_ref": {
+      "keggcite": "",
+      "correct": "",
+      "kegg": ""
+    },
+    "kegg": "D00109",
+    "chebi_ref": {
+      "ebicite": "",
+      "correct": "",
+      "EBI": ""
+    },
+    "chebi": "15365",
+    "chembl_ref": {
+      "ebicite": "",
+      "correct": "",
+      "EBI": ""
+    },
+    "chembl": "25",
+    "pdb_ligand": "AIN",
+    "c": "9",
+    "h": "8",
+    "o": "4",
+    "MW": {
+      "value": "180.157",
+      "unit": "g/mol"
+    },
+    "smiles": "O=C(C)Oc1ccccc1C(=O)O",
+    "stdinchi_ref": {
+      "stdinchicite": "",
+      "correct": "",
+      "chemspider": ""
+    },
+    "stdinchi": "1S/C9H8O4/c1-6(10)13-8-5-3-2-4-7(8)9(11)12/h2-5H,1H3,(H,11,12)",
+    "stdinchikey_ref": {
+      "stdinchicite": "",
+      "correct": "",
+      "chemspider": ""
+    },
+    "stdinchikey": "BSYNRYMUTXBXSQ-UHFFFAOYSA-N",
+    "synonyms": "2-acetoxybenzoic acidacetylsalicylateacetylsalicylic acidO-acetylsalicylic acid",
+    "density": "1.40",
+    "melting_point": "135",
+    "boiling_point": "140",
+    "boiling_notes": "(decomposes)",
+    "solubility": "3"
+  }
+}

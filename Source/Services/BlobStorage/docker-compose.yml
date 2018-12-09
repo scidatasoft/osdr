@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    blob-storage-api:
+        container_name: blob-storage-api
+        image: docker.your-company.com/blob-storage-api:latest
+        environment:
+        - OSDR_LOG_FOLDER=/logs
+        - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+        - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_dev
+        volumes:
+        - ${OSDR_LOG_FOLDER}:/logs/
+        networks:
+        - osdr-net-ext
+        ports:
+        - "18006:18006"
+
+networks:
+    osdr-net-ext:
+        external:
+            name: osdr-sys-net

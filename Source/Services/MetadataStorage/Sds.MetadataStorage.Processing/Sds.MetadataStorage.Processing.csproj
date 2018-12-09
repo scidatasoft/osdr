@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Company>Science Data Software</Company>
+    <Product>Open Science Data Repository</Product>
+    <Copyright>Copyright © 2017 Science Data Software</Copyright>
+    <Authors>Science Data Software</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.Development.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="appsettings.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Collector.Serilog.Enrichers.Assembly" Version="1.0.1" />
+    <PackageReference Include="MassTransit.SerilogIntegration" Version="4.1.0.1432-develop" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.0.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.5.0" />
+    <PackageReference Include="PeterKottas.DotNetCore.WindowsService" Version="2.0.5" />
+    <PackageReference Include="Sds.Heartbeat" Version="0.11.1" />
+    <PackageReference Include="Sds.MassTransit.RabbitMq" Version="2.1.4-develop" />
+    <PackageReference Include="Sds.Osdr.RecordsFile" Version="0.13.0" />
+    <PackageReference Include="Sds.Reflection" Version="1.0.3" />
+    <PackageReference Include="Sds.Serilog" Version="2.0.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="2.4.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.MetadataStorage.Domain\Sds.MetadataStorage.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

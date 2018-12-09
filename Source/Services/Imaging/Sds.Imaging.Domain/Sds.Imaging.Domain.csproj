@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>SDS Imaging Service Domain Logic</Description>
+    <Company>Science Data Software</Company>
+    <Product>Open Science Data Repository</Product>
+    <PackageId>Sds.Imaging.Domain</PackageId>
+    <Authors>Science Data Software</Authors>
+    <Description>SDS imaging domain models</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <Copyright>Copyright 2017 (c) Science Data Software. All rights reserved.</Copyright>
+    <PackageTags>domain imaging</PackageTags>
+    <Version>0.15.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="5.1.4" />
+  </ItemGroup>
+
+</Project>

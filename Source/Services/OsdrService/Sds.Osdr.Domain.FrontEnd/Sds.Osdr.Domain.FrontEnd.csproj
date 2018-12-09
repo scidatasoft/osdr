@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Company>Science Data Software</Company>
+    <Product>Open Science Data Repository</Product>
+    <Copyright>Copyright © 2017 Science Data Software</Copyright>
+    <Configurations>Debug;Release;Dev</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Collector.Serilog.Enrichers.Assembly" Version="1.0.1" />
+    <PackageReference Include="MassTransit.SerilogIntegration" Version="5.1.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.0.0" />
+    <PackageReference Include="PeterKottas.DotNetCore.WindowsService" Version="2.0.6" />
+    <PackageReference Include="Sds.CqrsLite.EventStore" Version="2.0.2-rc" />
+    <PackageReference Include="Sds.CqrsLite.MassTransit" Version="3.0.1" />
+    <PackageReference Include="Sds.Heartbeat" Version="0.11.1" />
+    <PackageReference Include="Sds.MassTransit.RabbitMq" Version="3.0.4" />
+    <PackageReference Include="Sds.Reflection" Version="1.0.3" />
+    <PackageReference Include="Sds.Serilog" Version="2.0.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="2.6.1" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.Osdr.Chemicals\Sds.Osdr.Chemicals.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Crystals\Sds.Osdr.Crystals.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Domain\Sds.Osdr.Domain.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Generic\Sds.Osdr.Generic.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Image\Sds.Osdr.Images.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Infrastructure\Sds.Osdr.Infrastructure.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.MachineLearning\Sds.Osdr.MachineLearning.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Office\Sds.Osdr.Office.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Pdf\Sds.Osdr.Pdf.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Reactions\Sds.Osdr.Reactions.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.RecordsFile\Sds.Osdr.RecordsFile.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Spectra\Sds.Osdr.Spectra.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Tabular\Sds.Osdr.Tabular.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.WebPage\Sds.Osdr.WebPage.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.uat.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.dev.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,42 @@
+{
+	"id": "9dd1a31b-b2f4-a7cc-da6c-2f9291e79f84",
+	"name": "BlobStorage",
+	"description": "",
+	"order": [
+		"58f75c1b-a27c-85c0-6b18-bff6a123d572"
+	],
+	"folders": [],
+	"timestamp": 1494896424778,
+	"owner": "684346",
+	"public": false,
+	"hasRequests": true,
+	"requests": [
+		{
+			"id": "58f75c1b-a27c-85c0-6b18-bff6a123d572",
+			"headers": "//Content-Type: multipart/form-data; boundary=----------287032381131322\nAuthorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSIsImtpZCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSJ9.eyJpc3MiOiJodHRwczovL2lkZW50aXR5LnNjaWRhdGFzb2Z0LmNvbS9jb3JlIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eS5zY2lkYXRhc29mdC5jb20vY29yZS9yZXNvdXJjZXMiLCJleHAiOjE0OTQ4OTk0MzMsIm5iZiI6MTQ5NDg5NTgzMywiY2xpZW50X2lkIjoib3Nkcl9hbmd1bGFyIiwic2NvcGUiOlsib3Nkci1hcGkiLCJhcGkiXSwic3ViIjoiYWYzNjQ0YTEtNWM2My00ZjVhLWE0NjItNTg4YTMyMjQ0MWJhIiwiYXV0aF90aW1lIjoxNDk0ODk1ODMzLCJpZHAiOiJpZHNydiIsInByZWZlcnJlZF91c2VybmFtZSI6ImFsZXgiLCJlbWFpbCI6InBzaGVuaWNobm92QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjoidHJ1ZSIsInJvbGUiOlsiQWRtaW4iLCJJZGVudGl0eVNlcnZlckFkbWluIiwiU2VyaWxvZ0FkbWluIl0sIm5hbWUiOiJBbGVrc2V5IFdoZWF0bWFuIiwiZ2l2ZW5fbmFtZSI6IkFsZWtzZXkiLCJmYW1pbHlfbmFtZSI6IldoZWF0bWFuIiwiZGlzcGxheV9uYW1lIjoiQWxleCBXaGVhdG1hbiIsImFtciI6WyJwYXNzd29yZCJdfQ.l40V_40muaG9_E4wMWXtLDwAV8-UEm5tWkOYyFwLyAHWNkv360A3Ns1o7qfPCYZTf1G1wfwK9wZ9BtXPysUW_6DHaiZ2QEFd-49WhMdHzAvMMgvzYAEiInkbR87b-DUy9lGmxb-kaakUVMw-9yoUXQGniINzi2oCFp9v9lPYbpz6XqkjQI41gPTV_qdx9AACTpaRE10af9QH3gld4gWVvPVQHJVJt8Lzp__UNBtbt01sW6tc_TMJUvIgnL6RHiexEqsKrTcW7EhNN8fnd57qKi1CxMACFkTgVVIj6GE3tpE80CtM0fhO0PM-NQsrjjUTpg8pdxI6aTd8TBhdpAas2g\n",
+			"url": "localhost:18000/api/blobs/postman",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "9dd1a31b-b2f4-a7cc-da6c-2f9291e79f84",
+			"data": [
+				{
+					"key": "",
+					"value": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "https://api.dev.dataledger.io/blob/v1/api/blobs",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1494896424777,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

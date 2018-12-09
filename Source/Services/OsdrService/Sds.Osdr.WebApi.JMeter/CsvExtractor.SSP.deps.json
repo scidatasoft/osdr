@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "CsvExtractor.SSP/1.0.0": {
+        "dependencies": {
+          "CsvExtractor": "1.0.0"
+        },
+        "runtime": {
+          "CsvExtractor.SSP.dll": {}
+        }
+      },
+      "CsvExtractor/1.0.0": {
+        "runtime": {
+          "CsvExtractor.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CsvExtractor.SSP/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CsvExtractor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

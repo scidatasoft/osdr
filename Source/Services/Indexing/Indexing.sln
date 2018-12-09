@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sds.Indexing", "Sds.Indexing\Sds.Indexing.csproj", "{B7ACF11E-C9E4-4BF6-A2C7-A01C049DB985}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sds.Indexing.Tests", "Sds.Indexing.Tests\Sds.Indexing.Tests.csproj", "{FBD27CAC-CF26-4DD9-86CB-29C727D9C767}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7ACF11E-C9E4-4BF6-A2C7-A01C049DB985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7ACF11E-C9E4-4BF6-A2C7-A01C049DB985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7ACF11E-C9E4-4BF6-A2C7-A01C049DB985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7ACF11E-C9E4-4BF6-A2C7-A01C049DB985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBD27CAC-CF26-4DD9-86CB-29C727D9C767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD27CAC-CF26-4DD9-86CB-29C727D9C767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD27CAC-CF26-4DD9-86CB-29C727D9C767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD27CAC-CF26-4DD9-86CB-29C727D9C767}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BDEFEE1-1C8A-41B1-BA30-8FEE14D9EE1C}
+	EndGlobalSection
+EndGlobal

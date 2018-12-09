@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageVersion>0.2.0</PackageVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;Dev</Configurations>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Sagas\Commands\**" />
+    <EmbeddedResource Remove="Sagas\Commands\**" />
+    <None Remove="Sagas\Commands\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.Osdr.Domain\Sds.Osdr.Domain.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Generic\Sds.Osdr.Generic.csproj" />
+  </ItemGroup>
+</Project>

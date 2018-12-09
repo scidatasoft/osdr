@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Company>Science Data Software</Company>
+    <Product>Open Science Data Repository</Product>
+    <Copyright>Copyright © 2017 Science Data Software</Copyright>
+    <PackageId>Sds.Storage.Blob.Domain</PackageId>
+    <Authors>Science Data Software</Authors>
+    <Description>Blob Storage domain models</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <Copyright>Copyright 2017 (c) Science Data Software. All rights reserved.</Copyright>
+    <PackageTags>domain storage blob</PackageTags>
+    <Version>0.13.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sds.MassTransit" Version="3.0.2" />
+  </ItemGroup>
+
+</Project>

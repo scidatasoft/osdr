@@ -1,0 +1,201 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Moq\WebImporter.cs" />
+    <Compile Remove="Tests\MachineLearning\PredictPropertiesInvalidCase.cs" />
+    <Compile Remove="Tests\MachineLearning\PredictPropertiesValidCase.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndFailBeforeTraining.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndFailDuringTheReportGeneration.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndFailDuringTheTraining.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndSharing.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneValidModelReverseEvents.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Moq\WebImporter.cs" />
+    <None Include="Tests\MachineLearning\PredictPropertiesInvalidCase.cs" />
+    <None Include="Tests\MachineLearning\PredictPropertiesValidCase.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndFailBeforeTraining.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndFailDuringTheReportGeneration.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndFailDuringTheTraining.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndSharing.cs" />
+    <None Include="Tests\MachineLearning\TrainOneValidModelReverseEvents.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.7.0" />
+    <PackageReference Include="Sds.CqrsLite.EventStore" Version="2.0.2-rc" />
+    <PackageReference Include="Sds.CqrsLite.MassTransit" Version="3.0.1" />
+    <PackageReference Include="Sds.EventStore.GetEventStore" Version="0.8.0" />
+    <PackageReference Include="Sds.MassTransit.RabbitMq" Version="3.0.4" />
+    <PackageReference Include="Sds.Serilog" Version="2.0.1" />
+    <PackageReference Include="Sds.Storage.Blob.Domain" Version="0.13.0" />
+    <PackageReference Include="Sds.Storage.Blob.GridFS" Version="0.2.3" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="2.6.1" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+    <PackageReference Include="Serilog.Sinks.XUnit" Version="1.0.6" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <PackageReference Include="FluentAssertions" Version="4.19.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.Osdr.Chemicals\Sds.Osdr.Chemicals.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Crystals\Sds.Osdr.Crystals.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Domain\Sds.Osdr.Domain.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Generic\Sds.Osdr.Generic.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Image\Sds.Osdr.Images.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.MachineLearning\Sds.Osdr.MachineLearning.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Office\Sds.Osdr.Office.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Pdf\Sds.Osdr.Pdf.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Reactions\Sds.Osdr.Reactions.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Spectra\Sds.Osdr.Spectra.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.Tabular\Sds.Osdr.Tabular.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.WebPage\Sds.Osdr.WebPage.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.Configuration">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.configuration\2.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Tests\GenegicFiles\ImageJpgProcessing.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\10001.rxn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100110.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100110_modified.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100118.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100119.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100133.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100172.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100231.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100252.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\1100331.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\125_11Mos.cdx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\13Csample.jdx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\2-Methyl-1-Propanol.jdx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\2018-02-14.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Abdelaziz A Full_manuscript.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Aspirin.mol">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Aspirin.mol.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Bernoulli_Naive_Bayes_with_isotonic_class_weights.sav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Chemical-diagram.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\chemspider.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\chemspider.mol">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\chemspider2.mol">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\combined lysomotrophic.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\computer-humor-computer-science.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Developing Standard Approaches for Curating Small Molecule Pharmaceuticals_Jan18_2013.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\drugbank_10_records.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\empty.rxn">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\epam.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\FocusSynthesis_InStock.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Generic.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\GenericInvalid.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\IMG_0109.gz">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\InvalidImageGeneration.cif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\invalid_sdf_with_20_records_where_first_and_second_are_invalid.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\ml-training-image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\ML_report.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\PropertiesPrediction.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\ringcount_0.mol">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\test_solubility.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\wiki.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\wikiAspirin.mol">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\WikiAspirin.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

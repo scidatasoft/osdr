@@ -1,0 +1,186 @@
+version: '3.4'
+
+services:
+  eventstore:
+    image: eventstore/eventstore:release-4.0.2
+    ports:
+      - "2113:2113"
+      - "1113:1113"
+    environment:
+      - RUN_PROJECTIONS = All
+    networks:
+      - osdr-test
+
+  redis:
+    image: redis:4-alpine
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    networks:
+      - osdr-test
+
+  rabbitmq:
+    image: docker.your-company.com/osdr-rabbitmq:3.6
+    hostname: "rabbitmq-test"
+    environment:
+      - RABBITMQ_DEFAULT_VHOST=osdr_test
+    ports:
+      - "8282:15672"
+      - "5671:5671"
+      - "5672:5672"
+    networks:
+      - osdr-test
+
+  mongo:
+    image: mongo:3.6
+    ports:
+      - "27017:27017"
+    networks:
+      - osdr-test
+
+  keycloak:
+    build: KeyCloak
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - '8080:8080'
+    networks:
+      - osdr-test
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+      POSTGRES_DATABASE: keycloak
+      POSTGRES_ROOT_PASSWORD: keycloak
+      pgdata: data-pstgresql
+    ports:
+      - '5432:5432'
+    networks:
+      - osdr-test
+
+  keycloak:
+    build: KeyCloak
+    environment:
+      DB_VENDOR: POSTGRES
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+      POSTGRES_PORT_5432_TCP_ADDR: postgres
+      POSTGRES_DATABASE: keycloak
+      JDBC_PARAMS: 'connectTimeout=30'
+    ports:
+      - '8080:8080'
+    networks:
+      - osdr-test
+    depends_on:
+      - postgres
+
+  osdr-service-backend:
+    container_name: osdr-service-backend
+    image: docker.your-company.com/osdr-service-backend
+    entrypoint: /bin/bash
+    environment:
+      - OSDR_LOG_FOLDER=/logs
+      - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+      - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_test
+      - OSDR_EVENT_STORE=ConnectTo=tcp://admin:changeit@eventstore:1113
+      - OSDR_REDIS=redis
+    command: ./wait-for-it.sh rabbitmq:15672 -t 30 -- ./Sds.Osdr.Domain.BackEnd
+    volumes:
+      - ${OSDR_LOG_FOLDER}:/logs
+    networks:
+      - osdr-test
+    depends_on:
+      - rabbitmq
+      - eventstore
+      - redis
+      - mongo
+
+  osdr-service-frontend:
+    container_name: osdr-service-frontend
+    image: docker.your-company.com/osdr-service-frontend
+    entrypoint: /bin/bash
+    environment:
+      - OSDR_LOG_FOLDER=/logs
+      - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+      - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_test
+      - OSDR_EVENT_STORE=ConnectTo=tcp://admin:changeit@eventstore:1113
+      - OSDR_REDIS=redis
+    command: ./wait-for-it.sh rabbitmq:15672 -t 30 -- ./Sds.Osdr.Domain.FrontEnd
+    volumes:
+      - ${OSDR_LOG_FOLDER}:/logs
+    networks:
+      - osdr-test
+    depends_on:
+      - rabbitmq
+      - eventstore
+      - redis
+      - mongo
+
+  osdr-service-sagahost:
+    container_name: osdr-service-sagahost
+    image: docker.your-company.com/osdr-service-sagahost
+    entrypoint: /bin/bash
+    environment:
+      - OSDR_LOG_FOLDER=/logs
+      - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+      - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_test
+    command: ./wait-for-it.sh rabbitmq:15672 -t 30 -- ./Sds.Osdr.Domain.SagaHost
+    volumes:
+      - ${OSDR_LOG_FOLDER}:/logs
+    networks:
+      - osdr-test
+    depends_on:
+      - rabbitmq
+      - mongo
+
+  osdr-service-persistence:
+    container_name: osdr-service-persistence
+    image: docker.your-company.com/osdr-service-persistence
+    entrypoint: /bin/bash
+    environment:
+      - OSDR_LOG_FOLDER=/logs
+      - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+      - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_test
+    command: ./wait-for-it.sh rabbitmq:15672 -t 30 -- ./Sds.Osdr.Persistence
+    volumes:
+      - ${OSDR_LOG_FOLDER}:/logs
+    networks:
+      - osdr-test
+    depends_on:
+      - rabbitmq
+      - mongo
+
+  osdr-service-web-api:
+    container_name: osdr-service-web-api
+    image: docker.your-company.com/osdr-service-web-api
+    entrypoint: /bin/bash
+    environment:
+      - IDENTITY_SERVER_URL=http://keycloak:8080/auth/realms/OSDR
+      - OSDR_REDIS=redis
+      - OSDR_LOG_FOLDER=/logs
+      - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+      - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_test
+      - OSDR_EVENT_STORE=ConnectTo=tcp://admin:changeit@eventstore:1113
+      #- OSDR_ES=http://elasticsearch:9200
+      - SWAGGER_BASEPATH=/osdr/v1
+    command: ./wait-for-it.sh rabbitmq:15672 -t 30 -- ./wait-for-it.sh keycloak:8080 -t 300 -- ./Sds.Osdr.WebApi
+    volumes:
+      - ${OSDR_LOG_FOLDER}:/logs
+    networks:
+      - osdr-test
+    ports:
+      - "28611:18006"
+    depends_on:
+      - keycloak
+      - rabbitmq
+      - eventstore
+      - redis
+      - mongo
+
+networks:
+    osdr-test:

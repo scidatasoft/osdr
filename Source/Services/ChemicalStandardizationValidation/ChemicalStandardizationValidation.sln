@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sds.ChemicalStandardizationValidation.Domain", "Sds.ChemicalStandardizationValidation.Domain\Sds.ChemicalStandardizationValidation.Domain.csproj", "{7A287254-E598-44E1-A71B-80C498FA90A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sds.ChemicalStandardizationValidation.Processing", "Sds.ChemicalStandardizationValidation.Processing\Sds.ChemicalStandardizationValidation.Processing.csproj", "{A0AE4CCD-A057-4D7F-9EC9-4CD9CA0736BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sds.ChemicalStandardizationValidation.WebApi", "Sds.ChemicalStandardizationValidation.WebApi\Sds.ChemicalStandardizationValidation.WebApi.csproj", "{3419A041-096F-427A-988D-5B638C0D6886}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sds.ChemicalStandardizationValidation.Persistance", "Sds.ChemicalStandardizationValidation.Persistance\Sds.ChemicalStandardizationValidation.Persistance.csproj", "{CEA611ED-87F2-4977-8978-B6539B9EE4CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sds.ChemicalStandardizationValidation.Tests", "Sds.ChemicalStandardizationValidation.Tests\Sds.ChemicalStandardizationValidation.Tests.csproj", "{C9C7BA08-C5D5-4571-8482-D8D4673A4244}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A287254-E598-44E1-A71B-80C498FA90A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A287254-E598-44E1-A71B-80C498FA90A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A287254-E598-44E1-A71B-80C498FA90A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A287254-E598-44E1-A71B-80C498FA90A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0AE4CCD-A057-4D7F-9EC9-4CD9CA0736BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0AE4CCD-A057-4D7F-9EC9-4CD9CA0736BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0AE4CCD-A057-4D7F-9EC9-4CD9CA0736BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0AE4CCD-A057-4D7F-9EC9-4CD9CA0736BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3419A041-096F-427A-988D-5B638C0D6886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3419A041-096F-427A-988D-5B638C0D6886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA611ED-87F2-4977-8978-B6539B9EE4CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA611ED-87F2-4977-8978-B6539B9EE4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA611ED-87F2-4977-8978-B6539B9EE4CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9C7BA08-C5D5-4571-8482-D8D4673A4244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C7BA08-C5D5-4571-8482-D8D4673A4244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C7BA08-C5D5-4571-8482-D8D4673A4244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C7BA08-C5D5-4571-8482-D8D4673A4244}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {741FB93C-20E8-46CB-9C8D-72E78758B4AE}
+	EndGlobalSection
+EndGlobal

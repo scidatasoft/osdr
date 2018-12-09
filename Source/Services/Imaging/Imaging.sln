@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sds.Imaging.WebApi", "Sds.Imaging.WebApi\Sds.Imaging.WebApi.csproj", "{01529E60-3EA4-46CE-B698-377B1BD53155}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sds.Imaging.Domain", "Sds.Imaging.Domain\Sds.Imaging.Domain.csproj", "{72409CC2-F09D-47F8-AC67-F94E8ED73E58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sds.Imaging.Rasterizers", "Sds.Imaging.Rasterizers\Sds.Imaging.Rasterizers.csproj", "{8CCAC5A7-AA4D-47BA-96B7-B950D004B3D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sds.Imaging.Processing", "Sds.Imaging.Processing\Sds.Imaging.Processing.csproj", "{C6FFFBB5-1AB7-48A0-9824-A01BF2D68CA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sds.Imaging.Persistence", "Sds.Imaging.Persistence\Sds.Imaging.Persistence.csproj", "{7495771F-C64E-4998-B430-A3DBB1B83217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sds.Imaging.Tests", "Sds.Imaging.Tests\Sds.Imaging.Tests.csproj", "{C9C7BA08-C5D5-4571-8482-D8D4673A4244}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01529E60-3EA4-46CE-B698-377B1BD53155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01529E60-3EA4-46CE-B698-377B1BD53155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01529E60-3EA4-46CE-B698-377B1BD53155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01529E60-3EA4-46CE-B698-377B1BD53155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72409CC2-F09D-47F8-AC67-F94E8ED73E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72409CC2-F09D-47F8-AC67-F94E8ED73E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72409CC2-F09D-47F8-AC67-F94E8ED73E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72409CC2-F09D-47F8-AC67-F94E8ED73E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CCAC5A7-AA4D-47BA-96B7-B950D004B3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CCAC5A7-AA4D-47BA-96B7-B950D004B3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CCAC5A7-AA4D-47BA-96B7-B950D004B3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CCAC5A7-AA4D-47BA-96B7-B950D004B3D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6FFFBB5-1AB7-48A0-9824-A01BF2D68CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6FFFBB5-1AB7-48A0-9824-A01BF2D68CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6FFFBB5-1AB7-48A0-9824-A01BF2D68CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6FFFBB5-1AB7-48A0-9824-A01BF2D68CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7495771F-C64E-4998-B430-A3DBB1B83217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7495771F-C64E-4998-B430-A3DBB1B83217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7495771F-C64E-4998-B430-A3DBB1B83217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7495771F-C64E-4998-B430-A3DBB1B83217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9C7BA08-C5D5-4571-8482-D8D4673A4244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C7BA08-C5D5-4571-8482-D8D4673A4244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C7BA08-C5D5-4571-8482-D8D4673A4244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C7BA08-C5D5-4571-8482-D8D4673A4244}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F199009D-5685-4202-82E3-65D15F459BED}
+	EndGlobalSection
+EndGlobal

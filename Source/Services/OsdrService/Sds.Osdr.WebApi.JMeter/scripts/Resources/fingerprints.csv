@@ -1,0 +1,18 @@
+key,value,parameters/radius,parameters/size,description
+ECFP,Extended-Connectivity Fingerprints binary,true,true,Extented Connectivity FingerPrint
+ECFC,Extended-Connectivity Fingerprints counts,true,true,Extented Connectivity Fingerprint Count vector
+ECFC_CHIRALITY,Extended-Connectivity Fingerprints counts with Chirality,true,true,Extented Connectivity Fingerprint Count vector with Chirality (can be combined with a chirality flag)
+FCFP,Feature-Connectivity Fingerprints binary,true,true,Feature Connectivity FingerPrint
+fcfc,Feature-Connectivity Fingerprints counts,true,true,Feature Connectivity Fingerprint Count vector
+FCFC_CHIRALITY,Feature-Connectivity Fingerprints counts with Chirality,true,true,Feature Connectivity Fingerprint Count vector with Chirality (can be combined with a chirality flag)
+ATOM_PAIRS,Atom-pair Fingerprints,true,true,RDKit Hashed Atom Pairs count vector
+MACCS,MACCS keys,,,166 public MACCS keys + 1 zero bit
+PATTERN,Pattern fingerprints,false,true,Experimental SMARTS patterns-based fingerprint
+AVALON,AVALON fingerprints,false,true,Avalon count FPs from Avalon cheminformatcis toolkit
+RDK,RDKit fingerprints,false,true,RDKit in-house subgraph-based count vector
+LAYERED,Layered fingerprints,false,true,Layered path-based-FP
+EGR,Extended reduced graph approach fingerprints,,,Extended reduced graph approach(ErG) uses pharmacophore-type node descriptions
+DESC,RDKit descriptros,false,false,ALL of the RDKit supported descriptors
+ENUM2CAN,Enum2Can fingerprint,false,false,
+CAN2CAN,Can2Can fingerprint,false,false,
+ENUM2ENUM,Enum2Enum fingerprint,false,false,

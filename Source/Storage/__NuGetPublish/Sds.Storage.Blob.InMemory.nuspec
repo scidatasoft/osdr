@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Sds.Storage.Blob.InMemory</id>
+    <version>1.0.12</version>
+    <title>Sds Storage Blob InMemory</title>
+    <authors>Science Data Software</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      .NET package to store files in memory mostly for using in unit tests
+    </description>
+    <dependencies>
+      <group targetFramework="netstandard2.0">
+        <dependency id="Sds.Storage.Blob.Core" version="0.2.3" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\Sds.Storage.Blob.InMemory\bin\Release\netstandard2.0\Sds.Storage.Blob.InMemory.dll" target="lib\netstandard2.0\Sds.Storage.Blob.InMemory.dll" />
+  </files>
+</package>

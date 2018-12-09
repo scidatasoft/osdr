@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>SDS Storage Blob Models</Description>
+    <Company>Science Data Software</Company>
+    <Product>Open Science Data Repository</Product>
+    <Copyright>Copyright © 2017 Science Data Software</Copyright>
+  </PropertyGroup>
+  
+</Project>

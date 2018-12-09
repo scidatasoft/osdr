@@ -1,0 +1,321 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Imaging API",
+"description": "The Imaging API allows you to manage chemical images on the server. The server can create new images for you when you upload a chemical file. You can then download, delete or get processing data about them.<br/>When you upload a file through the Imaging API, a BLOB is created. However, only the imaging data is stored, and no corresponding file is created.<br/>Use <strong>Files</strong> to upload a file for image processing, or to get or delete processing data. Use <strong>Images</strong> to download or delete the actual image. You can also get the current Imaging API version with <strong>Version</strong>."},
+  "basePath": "/",
+  "paths": {
+    "/api/files": {
+        "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Post file to server",
+        "description": "After uploading a file, the server returns json data for a new BLOB and its associated images.",
+        "operationId": "ApiFilesPost",
+        "consumes": [
+          "application/form-data"
+        ],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "Info",
+            "in": "formData",
+            "description": "Image generation options",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Image"
+              }
+            }
+          },
+          {
+            "name": "File",
+            "in": "formData",
+            "description": "Upload file.",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - file posted"
+          },
+          "401": {
+            "description": "Unauthorized - correct token needed"
+          }
+        }
+      }
+    },
+    "/api/files/{blobid}/images": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Get image data",
+        "description": "To get image processing data of any images associated with a BLOB, enter its id here.",
+        "operationId": "ApiFilesByBlobIdImagesGet",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "BLOB ID",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "schema": {
+                "$ref": "#/definitions/blobId"
+              }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - image data returned"
+          },
+          "404": {
+            "description": "File not found or request parameters incorrect"
+          },
+          "401": {
+            "description": "Unauthorized - correct token needed"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Generate images from an existing BLOB",
+        "description": "You can create new images from a BLOB and specify width, height, and format. Multiple images can be created.",
+        "operationId": "ApiFilesByBlobIdImagesPost",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [],
+        "parameters": [
+        {
+            "name": "id",
+            "in": "path",
+            "description": "BLOB ID",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "schema": {
+                "$ref": "#/definitions/blobId"
+                }
+            },
+          {
+            "name": "imagesRequest",
+            "in": "body",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Image"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - file posted"
+          },
+          "401": {
+            "description": "Unauthorized - correct token needed"
+          }
+        }
+      }
+    },
+    "/api/files/{id}": {
+      "delete": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Delete image data",
+        "operationId": "ApiFilesByIdDelete",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "BLOB ID",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "schema": {
+                "$ref": "#/definitions/blobId"
+              }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - file posted"
+          },
+          "404": {
+            "description": "File not found or request parameters incorrect"
+          },
+          "401": {
+            "description": "Unauthorized - correct token needed"
+          }
+        }
+      }
+    },
+    "/api/images/{id}": {
+      "get": {
+        "tags": [
+          "Images"
+        ],
+        "summary": "Download an image",
+        "description": "You can download the binary data of an image by supplying its BLOB ID.",
+        "operationId": "ApiImagesByIdGet",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "BLOB ID",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "schema": {
+                "$ref": "#/definitions/blobId"
+              }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns binary data of image"
+          },
+          "404": {
+            "description": "File not found or request parameters incorrect"
+          },
+          "401": {
+            "description": "Unauthorized - correct token needed"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Images"
+        ],
+        "summary": "Delete an image on server",
+        "operationId": "ApiImagesByIdDelete",
+        "consumes": [],
+        "produces": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "BLOB ID of file to be deleted",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "schema": {
+                "$ref": "#/definitions/blobId"
+              }          
+            },
+          {
+            "name": "bucket",
+            "in": "query",
+            "description": "Bucket ID",
+            "required": false,
+            "type": "string",
+            "schema": {
+                "$ref": "#/definitions/bucketId"
+              }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK - image deleted"
+          },
+          "404": {
+            "description": "File not found or request parameters incorrect"
+          },
+          "401": {
+            "description": "Unauthorized - correct token needed"
+          }
+        }
+      }
+    },
+    "/api/version": {
+        "get": {
+          "tags": [
+            "Version"
+          ],
+          "summary": "Get the Imaging API version",
+          "operationId": "ApiVersionGet",
+          "consumes": [],
+          "produces": [],
+          "responses": {
+            "200": {
+              "description": "Success - version returned",
+              "schema": {
+                "$ref": "#/definitions/version"
+              }
+            }
+          }
+        }
+      }
+  },
+  "definitions": {
+    "bucketId": {
+        "type": "string",
+        "example": "8332cb0a-e8ba-4585-b9e4-e64399e8b4bd"
+      },
+      "blobId": {
+        "type": "string",
+        "example": "b5690502-2cbc-46a6-8cb4-9c00d0a73133"
+      },
+      "version": {
+        "type": "string",
+        "example": "1.0"
+      },
+    "Image": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "b5690502-2cbc-46a6-8cb4-9c00d0a73133"
+        },
+        "width": {
+          "format": "int32",
+          "type": "integer",
+          "example": 100
+        },
+        "height": {
+          "format": "int32",
+          "type": "integer",
+          "example": 100
+        },
+        "format": {
+          "type": "string",
+          "example": "png"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "exception": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "name": "Authorization",
+      "in": "header",
+      "type": "apiKey",
+      "description": "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\""
+    }
+  }
+}

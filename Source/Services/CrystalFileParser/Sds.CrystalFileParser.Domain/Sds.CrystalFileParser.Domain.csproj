@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Sds.CrystalFileParser.Domain</AssemblyName>
+    <RootNamespace>Sds.CrystalFileParser.Domain</RootNamespace>
+    <Company>Science Data Software</Company>
+    <Product>Open Science Data Repository</Product>
+    <PackageId>Sds.CrystalFileParser.Domain</PackageId>
+    <Authors>Science Data Software</Authors>
+    <Description>SDS crystal file parser domain models</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <Copyright>Copyright 2017 (c) Science Data Software. All rights reserved.</Copyright>
+    <PackageTags>domain crystal parser</PackageTags>
+    <Version>0.15.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>    
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1705</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="5.1.4" />
+    <PackageReference Include="Sds.Domain" Version="1.13.3" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,76 @@
+version: '3.4'
+
+services:
+    osdr-service-backend:
+        container_name: osdr-service-backend
+        image: docker.your-company.com/osdr-service-backend
+        environment:
+          - OSDR_LOG_FOLDER=/logs
+          - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+          - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_test
+          - OSDR_EVENT_STORE=ConnectTo=tcp://admin:changeit@eventstore:1113
+          - OSDR_REDIS=redis
+        volumes:
+          - ${OSDR_LOG_FOLDER}:/logs
+        networks:
+          - osdr-test
+
+    osdr-service-frontend:
+        container_name: osdr-service-frontend
+        image: docker.your-company.com/osdr-service-frontend
+        environment:
+          - OSDR_LOG_FOLDER=/logs
+          - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+          - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_test
+          - OSDR_EVENT_STORE=ConnectTo=tcp://admin:changeit@eventstore:1113
+          - OSDR_REDIS=redis
+        volumes:
+          - ${OSDR_LOG_FOLDER}:/logs
+        networks:
+          - osdr-test
+
+    osdr-service-sagahost:
+        container_name: osdr-service-sagahost
+        image: docker.your-company.com/osdr-service-sagahost
+        environment:
+          - OSDR_LOG_FOLDER=/logs
+          - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+          - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_test
+        volumes:
+          - ${OSDR_LOG_FOLDER}:/logs
+        networks:
+          - osdr-test
+
+    osdr-service-persistence:
+        container_name: osdr-service-persistence
+        image: docker.your-company.com/osdr-service-persistence
+        environment:
+          - OSDR_LOG_FOLDER=/logs
+          - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+          - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_test
+        volumes:
+          - ${OSDR_LOG_FOLDER}:/logs
+        networks:
+          - osdr-test
+
+    osdr-service-web-api:
+        container_name: osdr-service-web-api
+        image: docker.your-company.com/osdr-service-web-api
+        environment:
+        - IDENTITY_SERVER_URL=${API_IDENTITY_SERVER_URL_UNESCAPED}
+        - OSDR_REDIS=redis
+        - OSDR_LOG_FOLDER=/logs
+        - OSDR_MONGO_DB=mongodb://mongo:27017/osdr
+        - OSDR_RABBIT_MQ=rabbitmq://guest:guest@rabbitmq:5672/osdr_test
+        - OSDR_EVENT_STORE=ConnectTo=tcp://admin:changeit@eventstore:1113
+        - OSDR_ES=http://elasticsearch:9200
+        - SWAGGER_BASEPATH=/osdr/v1
+        volumes:
+        - ${OSDR_LOG_FOLDER}:/logs
+        networks:
+        - osdr-test
+        ports:
+        - "28611:18006"
+
+networks:
+    osdr-test:

@@ -1,0 +1,9 @@
+..\ChemicalFileParser\ChemicalFileParser.sln;..\ChemicalFileParser\Sds.ChemicalFileParser.Tests\Sds.ChemicalFileParser.Tests.csproj
+..\ChemicalStandardizationValidation\ChemicalStandardizationValidation.sln;..\ChemicalStandardizationValidation\Sds.ChemicalStandardizationValidation.Tests\Sds.ChemicalStandardizationValidation.Tests.csproj
+..\Imaging\Imaging.sln;..\Imaging\Sds.Imaging.Tests\Sds.Imaging.Tests.csproj
+..\ReactionFileParser\ReactionFileParser.sln;..\ReactionFileParser\Sds.ReactionFileParser.Tests\Sds.ReactionFileParser.Tests.csproj
+..\CrystalFileParser\CrystalFileParser.sln;..\CrystalFileParser\Sds.CrystalFileParser.Tests\Sds.CrystalFileParser.Tests.csproj
+..\SpectraFileParser\SpectraFileParser.sln;..\SpectraFileParser\Sds.SpectraFileParser.Tests\Sds.SpectraFileParser.Tests.csproj
+..\PdfProcessor\PdfProcessor.sln;..\PdfProcessor\Sds.PdfProcessor.Tests\Sds.PdfProcessor.Tests.csproj
+..\OfficeProcessor\OfficeProcessor.sln;..\OfficeProcessor\Sds.OfficeProcessor.Tests\Sds.OfficeProcessor.Tests.csproj
+..\WebImporter\WebImporter.sln;..\WebImporter\Sds.WebImporter.Tests\Sds.WebImporter.Tests.csproj

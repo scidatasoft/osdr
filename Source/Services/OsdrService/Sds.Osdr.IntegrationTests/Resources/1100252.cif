@@ -1,0 +1,139 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-02-18 15:37:37 +0000 (Thu, 18 Feb 2016) $
+#$Revision: 176729 $
+#$URL: file:///home/coder/svn-repositories/cod/cif/1/10/02/1100252.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_1100252
+loop_
+_publ_author_name
+'Ibrahim, H.'
+'Bach, T.'
+'Harms, K.'
+_publ_section_title
+;
+(+-)-(1RS,2SR)-1,2-Bis(2'-methyl-3'-oxo-cyclohex-1'-enyl)-1,2-diphenylethane
+;
+_journal_issue                   12
+_journal_name_full               'Acta Crystallographica Section E'
+_journal_page_first              o1145
+_journal_page_last               o1146
+_journal_paper_doi               10.1107/S1600536801018384
+_journal_volume                  57
+_journal_year                    2001
+_chemical_formula_moiety         'C28 H30 O2'
+_chemical_formula_sum            'C28 H30 O2'
+_chemical_melting_point          503
+_chemical_name_systematic
+;
+(+-)-(1RS,2SR)-1,2-bis(2'-Methyl-3'-oxo-cyclohex-1'-enyl)-1,2-diphenylethane
+;
+_space_group_IT_number           14
+_symmetry_cell_setting           monoclinic
+_symmetry_space_group_name_Hall  '-P 2yn'
+_symmetry_space_group_name_H-M   'P 1 21/n 1'
+_cell_angle_alpha                90
+_cell_angle_beta                 112.740(6)
+_cell_angle_gamma                90
+_cell_formula_units_Z            2
+_cell_length_a                   10.8658(7)
+_cell_length_b                   9.4435(5)
+_cell_length_c                   11.7323(8)
+_cell_volume                     1110.287
+_diffrn_ambient_temperature      213
+_exptl_crystal_colour            colorless.
+_exptl_crystal_density_diffrn    1.192
+_exptl_crystal_description       prism
+_exptl_crystal_preparation       dichloromethane/pentane
+_refine_ls_R_factor_gt           5.8
+_refine_ls_wR_factor_gt          5.8
+_cod_original_sg_symbol_H-M      'P 21/n'
+_cod_database_code               1100252
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 x,y,z
+2 1/2+x,1/2-y,1/2+z
+3 -x,-y,-z
+4 -1/2-x,-1/2+y,-1/2-z
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+C1 C -0.01485(18) 0.41991(19) 0.98823(17)
+H1 H 0.0295(19) 0.370(2) 1.0693(19)
+C2 C 0.04892(18) 0.35902(19) 0.90364(16)
+C3 C 0.12380(17) 0.24016(19) 0.93175(16)
+C4 C 0.1894(2) 0.1909(2) 0.84903(18)
+C5 C 0.1689(3) 0.2736(3) 0.7343(2)
+H2 H 0.241(3) 0.348(3) 0.761(3)
+H3 H 0.183(3) 0.206(3) 0.675(3)
+C6 C 0.0344(2) 0.3460(3) 0.68447(19)
+H4 H -0.039(2) 0.272(3) 0.656(2)
+H5 H 0.027(3) 0.405(3) 0.612(3)
+C7 C 0.0206(2) 0.4386(2) 0.78447(17)
+H6 H -0.072(2) 0.477(2) 0.7529(19)
+H7 H 0.082(2) 0.522(3) 0.802(2)
+C8 C 0.1524(2) 0.1514(2) 1.04554(19)
+H8 H 0.20210 0.06780 1.04100
+H9 H 0.06900 0.12310 1.05090
+H10 H 0.20450 0.20610 1.11820
+H11? H 0.11500 0.19690 1.09900
+H12? H 0.24810 0.14160 1.08920
+H13? H 0.11260 0.05850 1.02180
+C9 C -0.16390(18) 0.3858(2) 0.93855(16)
+C10 C -0.2035(2) 0.2575(2) 0.97249(19)
+H14 H -0.133(2) 0.197(3) 1.032(2)
+C11 C -0.3358(2) 0.2183(3) 0.9293(2)
+H15 H -0.359(3) 0.122(3) 0.954(2)
+C12 C -0.4328(2) 0.3059(3) 0.8511(2)
+H16 H -0.526(3) 0.276(3) 0.820(2)
+C13 C -0.3961(2) 0.4339(3) 0.8167(2)
+H17 H -0.460(3) 0.496(3) 0.759(2)
+C14 C -0.2626(2) 0.4735(2) 0.85927(19)
+H18 H -0.237(2) 0.564(3) 0.833(2)
+O1 O 0.26178(18) 0.08671(19) 0.87563(16)
+C1B* C 0.01485(18) 0.58009(19) 1.01177(17)
+H1B* H -0.0295(19) 0.630(2) 0.9307(19)
+C2B* C -0.04892(18) 0.64098(19) 1.09636(16)
+C3B* C -0.12380(17) 0.75984(19) 1.06825(16)
+C4B* C -0.1894(2) 0.8091(2) 1.15097(18)
+C5B* C -0.1689(3) 0.7264(3) 1.2657(2)
+H2B* H -0.241(3) 0.652(3) 1.239(3)
+H3B* H -0.183(3) 0.794(3) 1.325(3)
+C6B* C -0.0344(2) 0.6540(3) 1.31553(19)
+H4B* H 0.039(2) 0.728(3) 1.344(2)
+H5B* H -0.027(3) 0.595(3) 1.388(3)
+C7B* C -0.0206(2) 0.5614(2) 1.21553(17)
+H6B* H 0.072(2) 0.523(2) 1.2471(19)
+H7B* H -0.082(2) 0.478(3) 1.198(2)
+O1B* O -0.26178(18) 0.91329(19) 1.12437(16)
+C8B* C -0.1524(2) 0.8486(2) 0.95446(19)
+H8B* H -0.20210 0.93220 0.95900
+H9B* H -0.06900 0.87690 0.94910
+H10B* H -0.20450 0.79390 0.88180
+C9B* C 0.16390(18) 0.6142(2) 1.06145(16)
+C10B* C 0.2035(2) 0.7425(2) 1.02751(19)
+H14B* H 0.133(2) 0.803(3) 0.968(2)
+C11B* C 0.3358(2) 0.7817(3) 1.0707(2)
+H15B* H 0.359(3) 0.878(3) 1.046(2)
+C12B* C 0.4328(2) 0.6941(3) 1.1489(2)
+H16B* H 0.526(3) 0.724(3) 1.180(2)
+C13B* C 0.3961(2) 0.5661(3) 1.1833(2)
+H17B* H 0.460(3) 0.504(3) 1.241(2)
+C14B* C 0.2626(2) 0.5265(2) 1.14073(19)
+H18B* H 0.237(2) 0.436(3) 1.167(2)
+loop_
+_atom_type_symbol
+_atom_type_radius_bond
+C 0.68
+H 0.23
+O 0.68

@@ -1,0 +1,30 @@
+[
+    {
+        "code": "chemical_name",
+        "title": "Chemical Name"
+    },
+    {
+        "code": "cas_number",
+        "title": "CAS number"
+    },
+    {
+        "code": "inchi",
+        "title": "InChI"
+    },
+    {
+        "code": "inchi_key",
+        "title": "InChIKey"
+    },
+    {
+        "code": "smiles",
+        "title": "SMILES"
+    },
+    {
+        "code": "continuous_numeric_value",
+        "title": "Continuous Numeric Value"
+    },
+    {
+        "code": "binary_value",
+        "title": "Binary Value"
+    }
+]

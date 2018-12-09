@@ -1,0 +1,47 @@
+version: '3.4'
+
+services:
+    filebeat:
+        image: docker.your-company.com/filebeat
+        volumes:
+          - ${OSDR_LOG_FOLDER}:/logs/
+        networks:
+          - osdr-test
+        depends_on:
+          - logstash
+
+    logstash:
+        image: docker.your-company.com/logstash
+        command: -f /config-dir/logstash.conf
+        ports:
+          - "5044:5044"
+          - "12201:12201"
+          - "12201:12201/udp"
+          - "12202:12202"
+          - "12202:12202/udp"
+        networks:
+          - osdr-test
+        depends_on:
+          - elasticsearch
+
+    kibana:
+        image: docker.elastic.co/kibana/kibana:6.4.0
+        environment:
+          - ELASTICSEARCH_URL:"elasticsearch:9200"
+        ports:
+          - "5661:5601"
+        networks:
+          - osdr-test
+
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
+        environment:
+          - discovery.type=single-node
+        ports:
+          - "9200:9200"
+          - "9300:9300"
+        networks:
+          - osdr-test
+
+networks:
+    osdr-test:

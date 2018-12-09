@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0AE4CCD-A057-4D7F-9EC9-4CD9CA0736BA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Sds.ChemicalStandardizationValidation.Processing</RootNamespace>
+    <AssemblyName>Sds.ChemicalStandardizationValidation.Processing</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator, Version=5.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.CommonServiceLocator.5.0.0\lib\net45\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Automatonymous, Version=4.1.1.102, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Automatonymous.4.1.1\lib\net452\Automatonymous.dll</HintPath>
+    </Reference>
+    <Reference Include="bingo-dotnet, Version=1.1.5589.31745, Culture=neutral, PublicKeyToken=6a31cb7055c16a21, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\bingo-dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="Collector.Serilog.Enrichers.Assembly, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Collector.Serilog.Enrichers.Assembly.1.0.1\lib\net45\Collector.Serilog.Enrichers.Assembly.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.1\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="GreenPipes, Version=2.1.1.108, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\GreenPipes.2.1.1\lib\net452\GreenPipes.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.RelaxNG, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.RelaxNG.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection.Emit, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.Reflection.Emit.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection.Emit.PdbWriter, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.Reflection.Emit.PdbWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="InChINet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\InChINet.1.0.1\lib\net45\InChINet.dll</HintPath>
+    </Reference>
+    <Reference Include="indigo-dotnet, Version=1.1.5589.31742, Culture=neutral, PublicKeyToken=ca8e3320bc4499e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="indigo-inchi-dotnet, Version=1.1.5589.31744, Culture=neutral, PublicKeyToken=6a31cb7055c16a21, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-inchi-dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="indigo-renderer-dotnet, Version=1.1.5589.31744, Culture=neutral, PublicKeyToken=09f0421d14bc0b92, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-renderer-dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit, Version=5.1.4.1587, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.5.1.4\lib\net452\MassTransit.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.AutofacIntegration, Version=5.1.4.1587, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.Autofac.5.1.4\lib\net452\MassTransit.AutofacIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.AutomatonymousExtensions.DependencyInjectionIntegration, Version=5.1.4.1587, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.Automatonymous.Extensions.DependencyInjection.5.1.4\lib\net461\MassTransit.AutomatonymousExtensions.DependencyInjectionIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.AutomatonymousIntegration, Version=5.1.4.1587, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.Automatonymous.5.1.4\lib\net452\MassTransit.AutomatonymousIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.Extensions.DependencyInjectionIntegration, Version=5.1.4.1587, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.Extensions.DependencyInjection.5.1.4\lib\net461\MassTransit.Extensions.DependencyInjectionIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.RabbitMqTransport, Version=5.1.4.1587, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\MassTransit.RabbitMQ.5.1.4\lib\net452\MassTransit.RabbitMqTransport.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net46\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DotNet.InternalAbstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.InternalAbstractions.1.0.0\lib\net451\Microsoft.DotNet.InternalAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.0.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.0.3\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=2.0.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.2.0.3\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.5.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.5.0\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.5.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.GridFS, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.GridFS.2.4.4\lib\net45\MongoDB.Driver.GridFS.dll</HintPath>
+    </Reference>
+    <Reference Include="NewId, Version=3.0.1.17, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NewId.3.0.1\lib\netstandard1.6\NewId.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.1\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenBabelNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenBabelNet.1.0.1\lib\net45\OpenBabelNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <HintPath>..\packages\RabbitMQ.Client.5.0.1\lib\net451\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Chemistry, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Chemistry.1.0.11\lib\netstandard1.6\Sds.Chemistry.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Core.1.0.3\lib\net462\Sds.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Cvsp.Compounds, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Chemistry.ValidationStandardization.1.0.12\lib\net471\Sds.Cvsp.Compounds.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Cvsp.Compounds.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Cvsp.Compounds.Core.1.0.8\lib\net471\Sds.Cvsp.Compounds.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Cvsp.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Cvsp.Core.1.0.7\lib\netstandard2.0\Sds.Cvsp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Domain.1.13.3\lib\netstandard2.0\Sds.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Heartbeat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Heartbeat.0.11.1\lib\netstandard2.0\Sds.Heartbeat.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.MassTransit, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.MassTransit.3.0.2\lib\netstandard2.0\Sds.MassTransit.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.MassTransit.AutofacIntegration, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.MassTransit.AutofacIntegration.3.0.2\lib\netstandard2.0\Sds.MassTransit.AutofacIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Reflection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Reflection.1.0.3\lib\netstandard1.6\Sds.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Serilog, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Serilog.2.0.1\lib\netstandard2.0\Sds.Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Storage.Blob.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Storage.Blob.Core.0.2.3\lib\netstandard2.0\Sds.Storage.Blob.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sds.Storage.Blob.GridFS, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sds.Storage.Blob.GridFS.0.2.3\lib\netstandard2.0\Sds.Storage.Blob.GridFS.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.7.1\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Settings.AppSettings, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Settings.AppSettings.2.1.2\lib\net45\Serilog.Settings.AppSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console, Version=3.1.1.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Console.3.1.1\lib\net45\Serilog.Sinks.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.RollingFile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.RollingFile.3.3.0\lib\net45\Serilog.Sinks.RollingFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Topshelf.4.0.3\lib\net452\Topshelf.dll</HintPath>
+    </Reference>
+    <Reference Include="Topshelf.Serilog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Topshelf.Serilog.4.0.3\lib\net452\Topshelf.Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch, Version=1.0.8.28, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch.View, Version=1.0.1493.40755, Culture=neutral">
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.View.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlers\StandardizeValidateCommandHandler.cs" />
+    <Compile Include="CommandHandlers\StandardizeCommandHandler.cs" />
+    <Compile Include="CommandHandlers\ValidateCommandHandler.cs" />
+    <Compile Include="IssuesResolver.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceProcessingControl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.ChemicalStandardizationValidation.Domain\Sds.ChemicalStandardizationValidation.Domain.csproj">
+      <Project>{7A287254-E598-44E1-A71B-80C498FA90A2}</Project>
+      <Name>Sds.ChemicalStandardizationValidation.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

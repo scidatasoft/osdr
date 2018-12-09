@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;Dev</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sds.CrystalFileParser.Domain" Version="0.15.0" />
+    <PackageReference Include="Sds.MetadataStorage.Domain" Version="0.13.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.Osdr.Domain\Sds.Osdr.Domain.csproj" />
+    <ProjectReference Include="..\Sds.Osdr.RecordsFile\Sds.Osdr.RecordsFile.csproj" />
+  </ItemGroup>
+
+</Project>

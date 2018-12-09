@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>Sds.FileStorage.EntityFramework</id>
+		<version>1.0.41</version>
+		<title>SDS FileStorage EntityFramework</title>
+		<authors>Science Data Software</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>
+			Entity Framework implementation of IFileStorage interface to store selected files on the back-end. (SDS.FileStorage.EntityFramework)
+		</description>
+		<dependencies>
+			<group targetFramework=".NETFramework4.6.2">
+				<dependency id="Sds.FileStorage.Core" version="1.0.21" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="..\bin\Sds.FileStorage.EntityFramework.dll" target="lib\net462\Sds.FileStorage.EntityFramework.dll" />
+	</files>
+</package>

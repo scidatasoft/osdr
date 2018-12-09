@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>Sds.PdfProcessor.Domain</AssemblyName>
+    <RootNamespace>Sds.PdfProcessor.Domain</RootNamespace>
+    <Company>Science Data Software</Company>
+    <Product>Open Science Data Repository</Product>
+    <Copyright>Copyright © 2017 Science Data Software</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Commands\ve-9CEA.tmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CqrsLite" Version="0.14.3" />
+    <PackageReference Include="Sds.CqrsLite" Version="1.2.5" />
+  </ItemGroup>
+
+</Project>

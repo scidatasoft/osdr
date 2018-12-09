@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extensions\MLControllerExtension.cs" />
+    <Compile Remove="Tests\MachineLearning\PredictPropertiesInvalidCase.cs" />
+    <Compile Remove="Tests\MachineLearning\PredictPropertiesValidCase.cs" />
+    <Compile Remove="Tests\MachineLearning\SharingMLModel.cs" />
+    <Compile Remove="Tests\MachineLearning\SingleStructurePredictions.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndFailBeforeTraining.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndFailDuringTheReportGeneration.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneModelAndFailDuringTheTraining.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneValidModelReverseEvents.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneValidModelWithDelays.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneValidModelWithFailedOptimization.cs" />
+    <Compile Remove="Tests\MachineLearning\TrainOneValidModelWithSuccessOptimization.cs" />
+    <Compile Remove="Tests\Sharing\GetPublicNodesAndEntities.cs" />
+    <Compile Remove="Tests\Sharing\SharingModelTrained.cs" />
+    <Compile Remove="Tests\WebPages\GetNumberPage.cs" />
+    <Compile Remove="Tests\WebPages\GetNumberPageWithFolder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Extensions\MLControllerExtension.cs" />
+    <None Include="Tests\MachineLearning\PredictPropertiesInvalidCase.cs" />
+    <None Include="Tests\MachineLearning\PredictPropertiesValidCase.cs" />
+    <None Include="Tests\MachineLearning\SharingMLModel.cs" />
+    <None Include="Tests\MachineLearning\SingleStructurePredictions.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndFailBeforeTraining.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndFailDuringTheReportGeneration.cs" />
+    <None Include="Tests\MachineLearning\TrainOneModelAndFailDuringTheTraining.cs" />
+    <None Include="Tests\MachineLearning\TrainOneValidModelReverseEvents.cs" />
+    <None Include="Tests\MachineLearning\TrainOneValidModelWithDelays.cs" />
+    <None Include="Tests\MachineLearning\TrainOneValidModelWithFailedOptimization.cs" />
+    <None Include="Tests\MachineLearning\TrainOneValidModelWithSuccessOptimization.cs" />
+    <None Include="Tests\Sharing\GetPublicNodesAndEntities.cs" />
+    <None Include="Tests\Sharing\SharingModelTrained.cs" />
+    <None Include="Tests\WebPages\GetNumberPage.cs" />
+    <None Include="Tests\WebPages\GetNumberPageWithFolder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sds.Osdr.IntegrationTests\Sds.Osdr.IntegrationTests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Extensions\EntititesControllerExtension.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

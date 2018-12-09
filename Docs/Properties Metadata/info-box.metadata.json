@@ -1,0 +1,59 @@
+{
+    "_id": "da6c1f61-cc73-4703-93d4-190a87fcdcc5",
+    "title": "Chemical Properties",
+    "fileType": "MOL | application/osdr-chemical-file+mol",
+    "infoBoxType": "chemical-properties",
+    "sections": [{
+        "title": "", // Do not render section if no title. Place "screens" at the root level
+        "screens": [{
+            "title": "", // Do not render screen if no title. Place "screen parts" at the root level
+            "screenType": "composite",
+            "screenParts": [{
+                "title": "InChi",
+                "responseType": "text-response",
+                "dataType": "string",
+                "responseTarget": "Properties.UserProperties[@Name='InChi'].Value", // Json-path expression? (https://github.com/json-path/JsonPath)
+            },{
+                "title": "InChIKey",
+                "responseType": "text-response",
+                "dataType": "string",
+                "responseTarget": "Properties.UserProperties[@Name='InChIKey'].Value",
+            },{
+                "title": "NonStdInChI",
+                "responseType": "text-response",
+                "dataType": "string",
+                "responseTarget": "Properties.UserProperties[@Name='NonStdInChI'].Value",
+            },{
+                "title": "NonStdInChIKey",
+                "responseType": "text-response",
+                "dataType": "string",
+                "responseTarget": "Properties.UserProperties[@Name='NonStdInChIKey'].Value",
+            },{
+                "title": "SMILES",
+                "responseType": "text-response",
+                "dataType": "string",
+                "responseTarget": "Properties.UserProperties[@Name='SMILES'].Value",
+            },{
+                "title": "MOLECULAR_FORMULA",
+                "responseType": "text-response",
+                "dataType": "string",
+                "responseTarget": "Properties.UserProperties[@Name='MOLECULAR_FORMULA'].Value",
+            },{
+                "title": "MOLECULAR_WEIGHT",
+                "responseType": "text-response",
+                "dataType": "string",
+                "responseTarget": "Properties.UserProperties[@Name='MOLECULAR_WEIGHT'].Value",
+            },{
+                "title": "MONOISOTOPIC_MASS",
+                "responseType": "text-response",
+                "dataType": "string",
+                "responseTarget": "Properties.UserProperties[@Name='MONOISOTOPIC_MASS'].Value",
+            },{
+                "title": "MOST_ABUNDANT_MASS",
+                "responseType": "text-response",
+                "dataType": "string",
+                "responseTarget": "Properties.UserProperties[@Name='MOST_ABUNDANT_MASS'].Value",
+            },]
+        }]
+    }]
+}

@@ -1,0 +1,34 @@
+[
+    {
+        "code": "articles",
+        "title": "Articles"
+    },
+    {
+        "code": "images",
+        "title": "Images"
+    },
+    {
+        "code": "research",
+        "title": "Research"
+    },
+    {
+        "code": "structures",
+        "title": "Structures"
+    },
+    {
+        "code": "crystals",
+        "title": "Crystals"
+    },
+    {
+        "code": "reactions",
+        "title": "Reactions"
+    },
+    {
+        "code": "spectra",
+        "title": "Spectra"
+    },
+    {
+        "code": "datasets",
+        "title": "Datasets"
+    }
+]

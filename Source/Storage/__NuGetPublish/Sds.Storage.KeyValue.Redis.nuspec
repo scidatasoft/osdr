@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>Sds.Storage.KeyValue.Redis</id>
+		<version>1.0.8</version>
+		<title>SDS KeyValue Storage Redis</title>
+		<authors>Science Data Software</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>
+			.NET package with implementations Sds.Storage.KeyValue.Redis package for store data in the Redis. (Sds.Storage.KeyValue.Redis)
+		</description>
+		<dependencies>
+			<group targetFramework=".NETFramework4.7.1">
+				<dependency id="Newtonsoft.Json" version="9.0.1" />
+				<dependency id="Sds.Storage.KeyValue.Core" version="1.0.7" />
+				<dependency id="StackExchange.Redis" version="1.1.608" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="..\bin\Sds.Storage.KeyValue.Redis.dll" target="lib\net462\Sds.Storage.KeyValue.Redis.dll" />
+	</files>
+</package>

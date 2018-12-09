@@ -1,0 +1,178 @@
+{
+    "fingerprints": [
+       {
+          "key": "ECFP",
+          "value": "Extended-Connectivity Fingerprints binary",
+          "parameters": {
+             "radius": true,
+             "size": true
+          },
+          "description": "Extented Connectivity FingerPrint"
+       },
+       {
+          "key": "ECFC",
+          "value": "Extended-Connectivity Fingerprints counts",
+          "parameters": {
+             "radius": true,
+             "size": true
+          },
+          "description": "Extented Connectivity Fingerprint Count vector"
+       },
+       {
+          "key": "ECFC_CHIRALITY",
+          "value": "Extended-Connectivity Fingerprints counts with Chirality",
+          "parameters": {
+             "radius": true,
+             "size": true
+          },
+          "description": "Extented Connectivity Fingerprint Count vector with Chirality (can be combined with a chirality flag)"
+       },
+       {
+          "key": "FCFP",
+          "value": "Feature-Connectivity Fingerprints binary",
+          "parameters": {
+             "radius": true,
+             "size": true
+          },
+          "description": "Feature Connectivity FingerPrint"
+       },
+       {
+          "key": "FCFC",
+          "value": "Feature-Connectivity Fingerprints counts",
+          "parameters": {
+             "radius": true,
+             "size": true
+          },
+          "description": "Feature Connectivity Fingerprint Count vector"
+       },
+       {
+          "key": "FCFC_CHIRALITY",
+          "value": "Feature-Connectivity Fingerprints counts with Chirality",
+          "parameters": {
+             "radius": true,
+             "size": true
+          },
+          "description": "Feature Connectivity Fingerprint Count vector with Chirality (can be combined with a chirality flag)"
+       },
+       {
+          "key": "ATOM_PAIRS",
+          "value": "Atom-pair Fingerprints",
+          "parameters": {
+             "radius": true,
+             "size": true
+          },
+          "description": "RDKit Hashed Atom Pairs count vector"
+       },
+       {
+          "key": "MACCS",
+          "value": "MACCS keys",
+          "parameters": {},
+          "description": "166 public MACCS keys + 1 zero bit"
+       },
+       {
+          "key": "PATTERN",
+          "value": "Pattern fingerprints",
+          "parameters": {
+             "radius": false,
+             "size": true
+          },
+          "description": "Experimental SMARTS patterns-based fingerprint"
+       },
+       {
+          "key": "AVALON",
+          "value": "AVALON fingerprints",
+          "parameters": {
+             "radius": false,
+             "size": true
+          },
+          "description": "Avalon count FPs from Avalon cheminformatcis toolkit"
+       },
+       {
+          "key": "RDK",
+          "value": "RDKit fingerprints",
+          "parameters": {
+             "radius": false,
+             "size": true
+          },
+          "description": "RDKit in-house subgraph-based count vector"
+       },
+       {
+          "key": "LAYERED",
+          "value": "Layered fingerprints",
+          "parameters": {
+             "radius": false,
+             "size": true
+          },
+          "description": "Layered path-based-FP"
+       },
+       {
+          "key": "EGR",
+          "value": "Extended reduced graph approach fingerprints",
+          "parameters": {},
+          "description": "Extended reduced graph approach(ErG) uses pharmacophore-type node descriptions"
+       },
+       {
+          "key": "DESC",
+          "value": "RDKit descriptros",
+          "parameters": {
+             "radius": false,
+             "size": false
+          },
+          "description": "ALL of the RDKit supported descriptors"
+       },
+       {
+          "key": "ENUM2CAN",
+          "value": "Enum2Can fingerprint",
+          "parameters": {
+             "radius": false,
+             "size": false
+          },
+          "description": null
+       },
+       {
+          "key": "CAN2CAN",
+          "value": "Can2Can fingerprint",
+          "parameters": {
+             "radius": false,
+             "size": false
+          },
+          "description": null
+       },
+       {
+          "key": "CAN2ENUM",
+          "value": "Can2Enum fingerprint",
+          "parameters": {
+             "radius": false,
+             "size": false
+          },
+          "description": null
+       }
+    ],
+    "radius": [
+       {
+          "id": 1,
+          "value": 128
+       },
+       {
+          "id": 2,
+          "value": 256
+       },
+       {
+          "id": 3,
+          "value": 512
+       },
+       {
+          "id": 4,
+          "value": 1024
+       },
+       {
+          "id": 5,
+          "value": 2048
+       }
+    ],
+    "size": [
+       2,
+       3,
+       4
+    ]
+ }

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>Sds.Download</id>
+		<version>1.0.11</version>
+		<title>SDS Download</title>
+		<authors>Science Data Software</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>
+			 .NET package to downloads selected files
+		</description>
+		<dependencies>
+			<group targetFramework=".NETFramework4.7.1">
+				<dependency id="SDS.FileStorage.Core" version="1.0.22" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="..\Sds.Download\bin\Release\Sds.Download.dll" target="lib\net471\Sds.Download.dll" />
+	</files>
+</package>

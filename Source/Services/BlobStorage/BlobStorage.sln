@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sds.Storage.Blob.WebApi", "Sds.Storage.Blob.WebApi\Sds.Storage.Blob.WebApi.csproj", "{7FC7E7DA-7719-42B2-BB0C-EE9DB49B9567}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sds.Storage.Blob.Domain", "Sds.Storage.Blob.Domain\Sds.Storage.Blob.Domain.csproj", "{87A49268-93BC-4B63-90FF-12E9A114E613}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{2B85C601-85E6-4346-B290-8028801DA558}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FC7E7DA-7719-42B2-BB0C-EE9DB49B9567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FC7E7DA-7719-42B2-BB0C-EE9DB49B9567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FC7E7DA-7719-42B2-BB0C-EE9DB49B9567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FC7E7DA-7719-42B2-BB0C-EE9DB49B9567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87A49268-93BC-4B63-90FF-12E9A114E613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87A49268-93BC-4B63-90FF-12E9A114E613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87A49268-93BC-4B63-90FF-12E9A114E613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87A49268-93BC-4B63-90FF-12E9A114E613}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

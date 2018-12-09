@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  jmeter:
+    image: sds.osdr.webapi.jmeter
+    build: .
+    tty: true
+    container_name: jmeter
+    networks:
+      - jmeter-network
+
+networks:
+  jmeter-network:
+    driver: bridge

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Sds.Storage.KeyValue.Core</id>
+    <version>1.0.7</version>
+    <title>SDS KeyValue Storage Core</title>
+    <authors>Science Data Software</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      .NET package with interfaces for store data in the key-value store. (Sds.Storage.KeyValue.Core)
+    </description>
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.1">
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\Sds.Storage.KeyValue.Core\bin\Release\Sds.Storage.KeyValue.Core.dll" target="lib\net471\Sds.Storage.KeyValue.Core.dll" />
+  </files>
+</package>
